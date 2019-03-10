@@ -1,36 +1,63 @@
-export function itemsHasErrored(state = false, action) {
+export function fetchingError(state = false, action) {
     switch (action.type) {
-        case 'ITEMS_HAS_ERRORED':
+        case 'FETCHING_ERROR':
             return {
-                hasErrored: action.hasErrored,
+                fetchingError: action.fetchingError,
                 message: action.message
             };
-        case 'ITEMS_IS_LOADING':
+        case 'IS_FETCHING':
             return false;
         default:
             return state;
     }
 }
 
-export function itemsIsLoading(state = false, action) {
+export function isFetching(state = false, action) {
     switch (action.type) {
-        case 'ITEMS_IS_LOADING':
+        case 'IS_FETCHING':
             return true;
-        case 'ITEMS_FETCH_DATA_SUCCESS':
+        case 'FETCH_POST_LIST_SUCCESS':
             return false;
-        case  'ITEMS_HAS_ERRORED':
+        case  'FETCHING_ERROR':
+            return false;
+        case 'FETCH_POST_SUCCESS':
+            return false;
+        case 'FETCH_POST_WITH_COMMENTS_SUCCESS':
             return false;
         default:
             return state;
     }
 }
 
-export function items(state = [], action) {
+export function posts(state = [], action) {
     switch (action.type) {
-        case 'ITEMS_FETCH_DATA_SUCCESS':
-            return action.items;
-        case  'ITEMS_HAS_ERRORED':
+        case 'FETCH_POST_LIST_SUCCESS':
+            return action.posts;
+        case  'FETCHING_ERROR':
             return [];
+        default:
+            return state;
+    }
+}
+
+
+export function post(state = null, action) {
+    switch (action.type) {
+        case 'FETCH_POST_SUCCESS':
+            return action.post;
+        case  'FETCHING_ERROR':
+            return null;
+        default:
+            return state;
+    }
+}
+
+export function postWithComments(state = null, action) {
+    switch (action.type) {
+        case 'FETCH_POST_WITH_COMMENTS_SUCCESS':
+            return action.postWithComments;
+        case  'FETCHING_ERROR':
+            return null;
         default:
             return state;
     }

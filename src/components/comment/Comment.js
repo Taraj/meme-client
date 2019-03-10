@@ -1,37 +1,26 @@
 import React from 'react';
 
 import './Comment.less';
-
+import {Link} from "react-router-dom";
 
 class Comment extends React.Component {
-
-    like = () => {
-        alert("lubie to xD");
-    };
-
-    dislike = () => {
-        alert("nie lubie:C");
-    };
 
     render() {
         return (
             <div className="comment-item-container">
                 <div className="comment-item-author-image">
-                    <a href={/users/+ this.props.comment.author.nickname}
-                    className="comment-item-author-image-link"
-                    >
-
-                    <img className="comment-item-author-image-avatar"
-                         alt={this.props.comment.author.nickname}
-                         src={this.props.comment.author.avatarUrl}
-                    />
-                    </a>
+                    <Link to={"/user/" + this.props.comment.author.nickname}
+                          className="comment-item-author-image-link">
+                        <img className="comment-item-author-image-avatar"
+                             alt={this.props.comment.author.nickname}
+                             src={this.props.comment.author.avatarUrl}/>
+                    </Link>
                 </div>
 
                 <div className="comment-item-main">
                     <div className="comment-item-main-info">
-                        <a href={/users/+ this.props.comment.author.nickname}
-                           className="comment-item-main-info-author">{this.props.comment.author.nickname}</a>
+                        <Link to={"/user/" + this.props.comment.author.nickname}
+                              className="comment-item-main-info-author">{this.props.comment.author.nickname}</Link>
                         <span className="menu-main-main-info-date">{this.props.comment.createAt}</span>
                     </div>
                     <div className="comment-item-content">

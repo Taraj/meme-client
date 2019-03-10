@@ -1,4 +1,5 @@
 import React from 'react';
+import {Link} from "react-router-dom";
 
 import './MemeItem.less';
 
@@ -16,22 +17,28 @@ class MemeItem extends React.Component {
     render() {
         return (
             <div className="meme-item-container">
-                <a href={/meme/ + this.props.meme.id} className="meme-item-title">{this.props.meme.title}</a>
+                <Link to={"/meme/" + this.props.meme.id} className="meme-item-title">
+                    {this.props.meme.title}
+                </Link>
                 <div className="meme-item-main-frame">
                     <div className="menu-main-main-info">
-                        <a href={/users/ + this.props.meme.author.nickname}
-                           className="menu-main-main-info-author">{this.props.meme.author.nickname}
-                        </a>
-                        <span className="menu-main-main-info-date">{this.props.meme.createAt}</span>
+                        <Link to={"/user/" + this.props.meme.author.nickname} className="menu-main-main-info-author">
+                            {this.props.meme.author.nickname}
+                        </Link>
+                        <span className="menu-main-main-info-date">
+                            {this.props.meme.createAt}
+                        </span>
                         <span className="menu-main-main-info-tags">
                             {this.props.meme.tags.map(tag => {
-                                return <a key={tag} href={/tags/ + tag}
-                                          className="menu-main-main-info-tags-item">#{tag}</a>
+                                return <Link key={tag} to={/tags/ + tag}
+                                          className="menu-main-main-info-tags-item">#{tag}</Link>
                             })
                             }
                         </span>
                     </div>
-                    <a href={/meme/ + this.props.meme.id}><img alt={this.props.meme.title} className="meme-main-image" src={this.props.meme.memeUrl}/></a>
+                    <Link to={"/meme/" + this.props.meme.id}>
+                        <img alt={this.props.meme.title} className="meme-main-image" src={this.props.meme.memeUrl}/>
+                    </Link>
                     <div className="meme-main-feedback">
                         <button onClick={this.like}
                                 className="meme-main-feedback-like">+{this.props.meme.likes}</button>

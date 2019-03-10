@@ -3,7 +3,7 @@ import {connect} from "react-redux";
 import {Link} from 'react-router-dom'
 import {getQueuePosts} from '../actions/post';
 
-import MemeItem from '../memeItem/MemeItem'
+import MemeItem from '../components/memeItem/MemeItem'
 
 
 class Queue extends React.Component {
@@ -27,23 +27,23 @@ class Queue extends React.Component {
     }
 
     render() {
-        if (this.props.hasErrored) {
+        if (this.props.fetchingError) {
             return (
                 <div>
                     <p>Przepraszamy wystąpił bład w ładowaniu elementów:</p>
-                    <p>{this.props.hasErrored.message}</p>
+                    <p>{this.props.fetchingError.message}</p>
                 </div>
             )
         }
 
-        if (this.props.isLoading) {
+        if (this.props.isFetching) {
             return <p>Ładowanie...</p>;
         }
 
 
         return (
             <div>
-                {this.props.items.map(item => {
+                {this.props.posts.map(item => {
                     return <MemeItem key={item.id} meme={item}/>
                 })}
                 <Link to={"/queue/" + (parseInt(this.pageId()) + 1)} className="main-container-long-button">
@@ -56,9 +56,9 @@ class Queue extends React.Component {
 
 export default connect(state => {
     return {
-        items: state.items,
-        hasErrored: state.itemsHasErrored,
-        isLoading: state.itemsIsLoading
+        posts: state.posts,
+        fetchingError: state.fetchingError,
+        isFetching: state.isFetching
     };
 }, dispatch => {
     return {

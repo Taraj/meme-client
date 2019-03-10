@@ -1,9 +1,11 @@
 import {combineReducers} from "redux";
 
-import { items, itemsHasErrored, itemsIsLoading } from './post';
+import {posts, fetchingError, isFetching, post, postWithComments} from './post';
 
 export default combineReducers({
-    items,
-    itemsHasErrored,
-    itemsIsLoading
+    posts: posts,
+    post: post,
+    postWithComments: postWithComments,
+    fetchingError: fetchingError,
+    isFetching: isFetching
 });
