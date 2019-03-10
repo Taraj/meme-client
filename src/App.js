@@ -1,5 +1,6 @@
-import React from 'react';
-import {BrowserRouter, Route, Switch} from 'react-router-dom';
+import React from 'react'
+import {BrowserRouter, Route, Switch, Link} from 'react-router-dom'
+
 
 import './App.less'
 
@@ -11,24 +12,25 @@ import RandomPage from './routes/RandomPage'
 class App extends React.Component {
     render() {
         return (
-            <main>
-                <nav className="menu-main">
-                    <a className="menu-main-link" href="/">Główna</a>
-                    <a className="menu-main-link" href="/queue">Poczekalnia</a>
-                    <a className="menu-main-link" href="/random">Losowe</a>
-                    <a className="menu-main-link" href="#">Zaloguj</a>
-                </nav>
-                <BrowserRouter>
-                    <Switch>
-                        <Route exact path={["/", "/home", "/home/", "/home/:id"]} component={Home}/>
-                        <Route path={["/queue", "/queue/", "/queue/:id"]} component={Queue}/>
-                        <Route path="/meme/:id" component={MemePage}/>
-                        <Route path="/random" component={RandomPage}/>
-                    </Switch>
-                </BrowserRouter>
-            </main>
-
-        );
+            <BrowserRouter>
+                <div>
+                    <nav className="menu-main">
+                        <Link className="menu-main-link" to="/">Główna</Link>
+                        <Link className="menu-main-link" to="/queue">Poczekalnia</Link>
+                        <Link className="menu-main-link" to="/random">Losowe</Link>
+                        <Link className="menu-main-link" to="#">Zaloguj</Link>
+                    </nav>
+                    <main className="main-container">
+                        <Switch>
+                            <Route exact path={["/", "/home/:id", "/home/", "/home"]} component={Home}/>
+                            <Route path={["/queue/:id", "/queue/", "/queue"]} component={Queue}/>
+                            <Route path="/meme/:id" component={MemePage}/>
+                            <Route path="/random" component={RandomPage}/>
+                        </Switch>
+                    </main>
+                </div>
+            </BrowserRouter>
+        )
     }
 }
 

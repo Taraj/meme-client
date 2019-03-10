@@ -1,75 +1,67 @@
 import React from 'react';
+import {connect} from "react-redux";
+import {Link} from 'react-router-dom'
+import {getQueuePosts} from '../actions/post';
 
-
-import MemeItem from '../memeItem/MemeItem';
-
-import '../Main.less';
+import MemeItem from '../memeItem/MemeItem'
 
 
 class Queue extends React.Component {
 
-    constructor(props) {
-        super(props);
-        if (typeof props.match.params.id === "undefined") {
-            this.state = {
-                pageId: 1,
-                data: []
-            };
+    pageId = () => {
+        if (typeof this.props.match.params.id === "undefined") {
+            return 1;
         } else {
-            this.state = {
-                pageId: props.match.params.id,
-                data: []
-            };
+            return this.props.match.params.id;
+        }
+    };
+
+    componentDidMount() {
+        this.props.getPostPage(this.pageId());
+    }
+
+    componentDidUpdate(prevProps, prevState, snapshot) {
+        if (prevProps.match.params.id !== this.props.match.params.id) {
+            this.props.getPostPage(this.pageId());
         }
     }
 
-    componentDidMount() {
-
-        fetch('http://127.0.0.1:8080/api/v1/posts?queue=true&?offset=' + 10 * (this.state.pageId - 1))
-            .then(response => response.json())
-            .then(data => {
-                let newState = {
-                    pageId: this.state.pageId,
-                    data: data.map(item => {
-                        return {
-                            id: item.id,
-                            author: {
-                                nickname: item.author.nickname,
-                            },
-                            memeUrl: item.url,
-                            title: item.title,
-                            createAt: new Date(item.createdAt).toLocaleDateString('pl-PL'),
-                            tags: item.tags.map(tag => {
-                                return tag.name
-                            }),
-                            likes: 123,
-                            dislikes: 12
-                        }
-                    })
-                };
-                this.setState(newState);
-            }).catch(err => {
-            console.log(err);
-        });
-    }
-
     render() {
-        return (
-            <main>
-                <div className="meme-container">
-                    {this.state.data.map(item => {
-                        return <MemeItem key={item.id.toString()} meme={item}/>
-                    })}
+        if (this.props.hasErrored) {
+            return (
+                <div>
+                    <p>Przepraszamy wystąpił bład w ładowaniu elementów:</p>
+                    <p>{this.props.hasErrored.message}</p>
                 </div>
-                <div className="meme-pagination">
-                    <a href={"/queue/" + (parseInt(this.state.pageId) + 1)} className="meme-pagination-next-page">
-                        Następna Strona
-                    </a>
-                </div>
-            </main>
+            )
+        }
 
+        if (this.props.isLoading) {
+            return <p>Ładowanie...</p>;
+        }
+
+
+        return (
+            <div>
+                {this.props.items.map(item => {
+                    return <MemeItem key={item.id} meme={item}/>
+                })}
+                <Link to={"/queue/" + (parseInt(this.pageId()) + 1)} className="main-container-long-button">
+                    Następna Strona
+                </Link>
+            </div>
         );
     }
 }
 
-export default Queue;
+export default connect(state => {
+    return {
+        items: state.items,
+        hasErrored: state.itemsHasErrored,
+        isLoading: state.itemsIsLoading
+    };
+}, dispatch => {
+    return {
+        getPostPage: (page) => dispatch(getQueuePosts(page))
+    };
+})(Queue);

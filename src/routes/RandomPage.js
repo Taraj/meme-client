@@ -1,63 +1,55 @@
 import React from 'react';
 
-
 import MemeItem from '../memeItem/MemeItem';
-
-import '../Main.less';
+import {connect} from "react-redux";
+import {getRandomPost} from "../actions/post";
 
 
 class RandomPage extends React.Component {
-    constructor(props) {
-        super(props);
-        this.state = {
-            meme: null,
-            comments: null
-        }
+
+    componentDidMount() {
+        this.props.getRandomPost();
     }
 
-    componentWillMount() {
-
-        fetch('http://127.0.0.1:8080/api/v1/posts/random')
-            .then(response => response.json())
-            .then(data => {
-                let newState = {
-                    meme: {
-                        id: data.id,
-                        author: {
-                            nickname: data.author.nickname,
-                        },
-                        memeUrl: data.url,
-                        title: data.title,
-                        createAt: new Date(data.createdAt).toLocaleDateString('pl-PL'),
-                        tags: data.tags.map(tag => {
-                            return tag.name
-                        }),
-                        likes: 123,
-                        dislikes: 12
-                    },
-                    comments: this.state.comments
-                };
-                this.setState(newState);
-            }).catch(err => {
-            console.log(err);
-        });
-
-    }
+    refreshMeme = () => {
+        this.props.getRandomPost()
+    };
 
     render() {
+        if (this.props.hasErrored) {
+            return (
+                <div>
+                    <p>Przepraszamy wystąpił bład w ładowaniu elementów:</p>
+                    <p>{this.props.hasErrored.message}</p>
+                </div>
+            )
+        }
+
+        if (this.props.isLoading) {
+            return <p>Ładowanie...</p>;
+        }
+
         return (
-            <main>
-                <div className="meme-container">
-                    {this.state.meme ? <MemeItem key={this.state.meme.id} meme={this.state.meme}/> : "loading.."}
-                </div>
-                <div className="meme-pagination">
-                    <a href={"/random"} className="meme-pagination-next-page">
-                        Losuj dalej
-                    </a>
-                </div>
-            </main>
+            <div>
+                {this.props.items.map(item => {
+                    return <MemeItem key={item.id} meme={item}/>
+                })}
+                <button onClick={this.refreshMeme} className="main-container-long-button">
+                    Losuj Dalej
+                </button>
+            </div>
         );
     }
 }
 
-export default RandomPage;
+export default connect(state => {
+    return {
+        items: state.items,
+        hasErrored: state.itemsHasErrored,
+        isLoading: state.itemsIsLoading
+    };
+}, dispatch => {
+    return {
+        getRandomPost: () => dispatch(getRandomPost())
+    };
+})(RandomPage);

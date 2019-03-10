@@ -4,17 +4,9 @@ import React from 'react';
 import MemeItem from '../memeItem/MemeItem';
 import Comment from '../comment/Comment'
 
-import '../Main.less';
 
 
 class MemePage extends React.Component {
-    constructor(props) {
-        super(props);
-        this.state = {
-            meme: null,
-            comments: null
-        }
-    }
 
     componentWillMount() {
 
