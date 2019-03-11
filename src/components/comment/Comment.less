@@ -8,6 +8,9 @@
   width: 100px;
   height: 100px;
   display: flex;
+  @media only screen and (max-width: 450px) {
+    display: none;
+  }
 }
 
 .comment-item-author-image-avatar {
@@ -35,6 +38,9 @@
 
 .comment-item-content{
   padding: 10px 10px;
+  @media only screen and (max-width: 450px) {
+    padding: 0 30px;
+  }
 }
 .comment-item-main-info-author{
   padding-right: 10px;

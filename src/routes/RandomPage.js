@@ -2,36 +2,32 @@ import React from 'react';
 
 import MemeItem from '../components/memeItem/MemeItem';
 import {connect} from "react-redux";
-import {getRandomPost} from "../actions/post";
+import {fetchRandomPost} from '../actions/fetchRandomPost';
 
 
 class RandomPage extends React.Component {
 
     componentDidMount() {
-        this.props.getRandomPost();
+        this.props.fetchRandomPost();
     }
 
     refreshMeme = () => {
-        this.props.getRandomPost()
+        this.props.fetchRandomPost()
     };
 
     render() {
-        if (this.props.fetchingError) {
-            return (
-                <div>
-                    <p>Przepraszamy wystąpił bład w ładowaniu elementów:</p>
-                    <p>{this.props.fetchingError.message}</p>
-                </div>
-            )
+
+        if (this.props.post === null && this.props.error === null) {
+            return <p>Ładowanie...</p>;
         }
 
-        if (this.props.isFetching || this.props.post === null) {
-            return <p>Ładowanie...</p>;
+        if (this.props.post === null) {
+            return <p>Error :C</p>;
         }
 
         return (
             <div>
-                <MemeItem key={this.props.post.id} meme={this.props.post}/>
+                <MemeItem meme={this.props.post}/>
                 <button onClick={this.refreshMeme} className="main-container-long-button">
                     Losuj Dalej
                 </button>
@@ -42,12 +38,11 @@ class RandomPage extends React.Component {
 
 export default connect(state => {
     return {
-        post: state.post,
-        fetchingError: state.fetchingError,
-        isFetching: state.isFetching
+        post: state.randomPost.post,
+        error: state.randomPost.error
     };
 }, dispatch => {
     return {
-        getRandomPost: () => dispatch(getRandomPost())
+        fetchRandomPost: () => dispatch(fetchRandomPost())
     };
 })(RandomPage);

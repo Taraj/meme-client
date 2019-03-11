@@ -25,10 +25,45 @@ button {
   padding-right: 50px;
   justify-content: flex-end;
   height: 50px;
+  font-size: 25px;
+  @media only screen and (max-width: 650px) {
+    display: block;
+    height: 60px;
+  }
 }
 
+
+.menu-main-title {
+  flex: 1;
+  padding: 10px 10%;
+  @media only screen and (max-width: 850px) {
+    display: none;
+  }
+  @media only screen and (max-width: 650px) {
+    display: block;
+    text-align: center;
+    padding: 0;
+    line-height: 60px;
+    width: 100vw;
+  }
+}
+
+.menu-main-button {
+  cursor: pointer;
+  display: none;
+  @media only screen and (max-width: 650px) {
+    display: block;
+    position: fixed;
+    right: 15px;
+    top: 5px;
+
+    font-size: 50px;
+  }
+}
+
+
 .menu-main-link {
-  font-size: 25px;
+
   padding: 10px;
   margin: 0 20px;
 
@@ -36,7 +71,23 @@ button {
     border-bottom: solid white;
   }
 
+  @media only screen and (max-width: 650px) {
+    display: none;
+  }
 }
+
+.menu-main-link-active {
+  @media only screen and (max-width: 650px) {
+    display: block;
+    background-color: #181818;
+    width: 100vw;
+    margin: 0;
+    padding: 10px 25px;
+    border: none !important;
+  }
+
+}
+
 
 .main-container {
   width: 700px;
@@ -44,12 +95,12 @@ button {
   @media only screen and (max-width: 750px) {
     width: 90vw;
   }
-  @media only screen and (max-width: 400px) {
-    width: 350px;
+  @media only screen and (max-width: 200px) {
+    width: 190px;
   }
 }
 
-.main-container-long-button{
+.main-container-long-button {
   display: block;
   text-align: center;
   background-color: #aa0000;
@@ -58,30 +109,34 @@ button {
   cursor: pointer;
   width: 100%;
   box-sizing: border-box;
+  @media only screen and (max-width: 400px) {
+    margin-top: -75px;
+    font-size: 20px;
+  }
 }
-//////////////////////
 
-.meme-comments{
+.meme-comments {
   margin-top: -75px;
 }
 
-.meme-comments-header{
+.meme-comments-header {
   padding: 10px;
   font-size: 25px;
   background-color: #1f1f1f;
   display: block;
 }
 
-.meme-comments-container{
+.meme-comments-container {
   margin-top: 2px;
   background-color: #1f1f1f;
 }
 
-.user-main{
+.user-main {
   background-color: #1f1f1f;
   display: flex;
 }
-.user-main-avatar{
+
+.user-main-avatar {
   width: 250px;
   height: 250px;
   display: flex;
@@ -89,15 +144,16 @@ button {
   align-items: center;
 }
 
-.user-main-avatar-img{
+.user-main-avatar-img {
   width: 200px;
   height: 200px;
 }
-.user-main-info{
+
+.user-main-info {
   padding: 20px;
-  font-size: 30px;
   flex: 2;
 }
-.user-main-info-nickname{
 
+.user-main-info-nickname {
+  font-size: 30px;
 }

@@ -6,12 +6,27 @@ import './MemeItem.less';
 
 class MemeItem extends React.Component {
 
+    constructor(props) {
+        super(props);
+        this.state = {
+            likes: this.props.meme.likes,
+            dislikes: this.props.meme.dislikes
+        }
+    }
+
+
     like = () => {
-        alert("lubie to xD" + this.props.meme.title);
+        this.setState({
+            likes: this.state.likes + 1,
+            dislikes: this.state.dislikes
+        })
     };
 
     dislike = () => {
-        alert("nie lubie:C" + this.props.meme.title);
+        this.setState({
+            likes: this.state.likes,
+            dislikes: this.state.dislikes + 1
+        })
     };
 
     render() {
@@ -28,12 +43,11 @@ class MemeItem extends React.Component {
                         <span className="menu-main-main-info-date">
                             {this.props.meme.createAt}
                         </span>
-                        <span className="menu-main-main-info-tags">
+                        <span>
                             {this.props.meme.tags.map(tag => {
-                                return <Link key={tag} to={/tags/ + tag}
-                                          className="menu-main-main-info-tags-item">#{tag}</Link>
-                            })
-                            }
+                                return <Link key={tag} to={"/tags/" + tag}
+                                             className="menu-main-main-info-tags-item">#{tag}</Link>
+                            })}
                         </span>
                     </div>
                     <Link to={"/meme/" + this.props.meme.id}>
@@ -41,9 +55,9 @@ class MemeItem extends React.Component {
                     </Link>
                     <div className="meme-main-feedback">
                         <button onClick={this.like}
-                                className="meme-main-feedback-like">+{this.props.meme.likes}</button>
+                                className="meme-main-feedback-like">+{this.state.likes}</button>
                         <button onClick={this.dislike}
-                                className="meme-main-feedback-dislike">-{this.props.meme.dislikes}</button>
+                                className="meme-main-feedback-dislike">-{this.state.dislikes}</button>
                     </div>
                 </div>
             </div>

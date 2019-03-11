@@ -1,12 +1,12 @@
 import React from 'react';
 import {connect} from "react-redux";
 import {Link} from 'react-router-dom'
-import {getMainPosts} from '../actions/post';
+import {fetchQueuePage} from "../actions/fetchQueuePage";
 
-import MemeItem from '../components/memeItem/MemeItem'
+import MemeItem from'../components/memeItem/MemeItem'
 
 
-class Home extends React.Component {
+class QueuePage extends React.Component {
 
     pageId = () => {
         if (typeof this.props.match.params.id === "undefined") {
@@ -17,33 +17,30 @@ class Home extends React.Component {
     };
 
     componentDidMount() {
-        this.props.getPostPage(this.pageId());
+        this.props.fetchQueuePage(this.pageId());
     }
 
     componentDidUpdate(prevProps, prevState, snapshot) {
         if (prevProps.match.params.id !== this.props.match.params.id) {
-            this.props.getPostPage(this.pageId());
+            this.props.fetchQueuePage(this.pageId());
         }
     }
 
     render() {
-        if (this.props.fetchingError) {
-            return (
-                <div>
-                    <p>Przepraszamy wystąpił bład w ładowaniu elementów:</p>
-                    <p>{this.props.fetchingError.message}</p>
-                </div>
-            )
-        }
-        if (this.props.isFetching) {
+        if (this.props.posts === null && this.props.error === null) {
             return <p>Ładowanie...</p>;
         }
+
+        if (this.props.posts === null) {
+            return <p>Error :C</p>;
+        }
+
         return (
             <div>
                 {this.props.posts.map(item => {
                     return <MemeItem key={item.id} meme={item}/>
                 })}
-                <Link to={"/home/" + (parseInt(this.pageId()) + 1)} className="main-container-long-button">
+                <Link to={"/queue/" + (parseInt(this.pageId()) + 1)} className="main-container-long-button">
                     Następna Strona
                 </Link>
             </div>
@@ -51,15 +48,13 @@ class Home extends React.Component {
     }
 }
 
-
 export default connect(state => {
     return {
-        posts: state.posts,
-        fetchingError: state.fetchingError,
-        isFetching: state.isFetching
+        posts: state.queuePage.posts,
+        error: state.queuePage.error
     };
 }, dispatch => {
     return {
-        getPostPage: (page) => dispatch(getMainPosts(page))
+        fetchQueuePage: (page) => dispatch(fetchQueuePage(page))
     };
-})(Home);
+})(QueuePage);

@@ -1,10 +1,12 @@
 import React from 'react';
 import {connect} from "react-redux";
-import {getPostWithComments} from '../actions/post';
+
 
 import MemeItem from '../components/memeItem/MemeItem';
 import Comment from '../components/comment/Comment'
 
+import {fetchComments} from "../actions/fetchComments";
+import {fetchPost} from "../actions/fetchPost";
 
 class MemePage extends React.Component {
 
@@ -28,7 +30,8 @@ class MemePage extends React.Component {
 
         return (
             <div>
-                <MemeItem key={this.props.postWithComments.post.id} meme={this.props.postWithComments.post}/>
+                <MemeItem key={this.props.postWithComments.randomPost.id}
+                          meme={this.props.postWithComments.randomPost}/>
                 <div className="meme-comments">
                     <header className="meme-comments-header">Komentarze</header>
                     <div className="meme-comments-container">
@@ -45,13 +48,16 @@ class MemePage extends React.Component {
 
 export default connect(state => {
     return {
-        postWithComments: state.postWithComments,
-        fetchingError: state.fetchingError,
-        isFetching: state.isFetching
+        post: state.randomPost.posts,
+        errorPost: state.randomPost.error,
+        comments: state.comments.comments,
+        errorComment: state.comments.comments
+
     };
 }, dispatch => {
     return {
-        getPostWithComments: (id) => dispatch(getPostWithComments(id))
+        fetchComments: id => dispatch(fetchComments(id)),
+        fetchPost: id => dispatch(fetchPost(id))
     };
 })(MemePage);
 

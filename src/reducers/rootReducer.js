@@ -1,11 +1,17 @@
-import {combineReducers} from "redux";
+import {combineReducers} from 'redux';
 
-import {posts, fetchingError, isFetching, post, postWithComments} from './post';
+import {randomPost} from './randomPost';
+import {queuePage} from './queuePage';
+import {mainPage} from './mainPage';
+import {comments} from './comments';
+import {post} from './post';
 
-export default combineReducers({
-    posts: posts,
-    post: post,
-    postWithComments: postWithComments,
-    fetchingError: fetchingError,
-    isFetching: isFetching
+const rootReducer = combineReducers({
+    randomPost: randomPost,
+    mainPage: mainPage,
+    queuePage: queuePage,
+    comments: comments,
+    post: post
 });
+
+export default rootReducer

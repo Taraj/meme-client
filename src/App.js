@@ -4,22 +4,47 @@ import {BrowserRouter, Route, Switch, Link} from 'react-router-dom'
 
 import './App.less'
 
-import Home from './routes/Home'
-import Queue from './routes/Queue'
+import Home from './routes/HomePage'
+import Queue from './routes/QueuePage'
 import MemePage from './routes/MemePage'
 import RandomPage from './routes/RandomPage'
-import User from './routes/User'
+import User from './routes/UserPage'
+
+
 
 class App extends React.Component {
+    constructor(prps) {
+        super(prps);
+        this.state = {
+            mobileMenuIsOpen: ""
+        }
+    }
+
+    toggleMenu = () => {
+        if (this.state.mobileMenuIsOpen === "") {
+            this.setState({mobileMenuIsOpen: " menu-main-link-active"})
+        } else {
+            this.setState({mobileMenuIsOpen: ""})
+        }
+    };
+
     render() {
         return (
             <BrowserRouter>
                 <div>
                     <nav className="menu-main">
-                        <Link className="menu-main-link" to="/">Główna</Link>
-                        <Link className="menu-main-link" to="/queue">Poczekalnia</Link>
-                        <Link className="menu-main-link" to="/random">Losowe</Link>
-                        <Link className="menu-main-link" to="#">Konto</Link>
+                        <header className="menu-main-title">
+                            Meme
+                        </header>
+                        <Link className={"menu-main-link" + this.state.mobileMenuIsOpen} onClick={this.toggleMenu}
+                              to="/">Główna</Link>
+                        <Link className={"menu-main-link" + this.state.mobileMenuIsOpen} onClick={this.toggleMenu}
+                              to="/queue">Poczekalnia</Link>
+                        <Link className={"menu-main-link" + this.state.mobileMenuIsOpen} onClick={this.toggleMenu}
+                              to="/random">Losowe</Link>
+                        <Link className={"menu-main-link" + this.state.mobileMenuIsOpen} onClick={this.toggleMenu}
+                              to="#">Konto</Link>
+                        <i onClick={this.toggleMenu} className="fas fa-bars menu-main-button"/>
                     </nav>
                     <main className="main-container">
                         <Switch>
@@ -37,3 +62,4 @@ class App extends React.Component {
 }
 
 export default App;
+
