@@ -5,7 +5,6 @@ import {fetchMainPage} from "../actions/fetchMainPage";
 
 import MemeItem from '../components/memeItem/MemeItem'
 
-
 class HomePage extends React.Component {
 
     pageId = () => {

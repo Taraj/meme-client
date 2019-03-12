@@ -1,5 +1,5 @@
 import React from 'react'
-import {BrowserRouter, Route, Switch, Link} from 'react-router-dom'
+import {BrowserRouter, Route, Switch} from 'react-router-dom'
 
 
 import './App.less'
@@ -9,12 +9,14 @@ import Queue from './routes/QueuePage'
 import MemePage from './routes/MemePage'
 import RandomPage from './routes/RandomPage'
 import User from './routes/UserPage'
+import {connect} from "react-redux";
 
-
+import {Navbar} from './components/Navbar/Navbar';
+import AuthPage from "./routes/AuthPage";
 
 class App extends React.Component {
-    constructor(prps) {
-        super(prps);
+    constructor(props) {
+        super(props);
         this.state = {
             mobileMenuIsOpen: ""
         }
@@ -32,20 +34,7 @@ class App extends React.Component {
         return (
             <BrowserRouter>
                 <div>
-                    <nav className="menu-main">
-                        <header className="menu-main-title">
-                            Meme
-                        </header>
-                        <Link className={"menu-main-link" + this.state.mobileMenuIsOpen} onClick={this.toggleMenu}
-                              to="/">Główna</Link>
-                        <Link className={"menu-main-link" + this.state.mobileMenuIsOpen} onClick={this.toggleMenu}
-                              to="/queue">Poczekalnia</Link>
-                        <Link className={"menu-main-link" + this.state.mobileMenuIsOpen} onClick={this.toggleMenu}
-                              to="/random">Losowe</Link>
-                        <Link className={"menu-main-link" + this.state.mobileMenuIsOpen} onClick={this.toggleMenu}
-                              to="#">Konto</Link>
-                        <i onClick={this.toggleMenu} className="fas fa-bars menu-main-button"/>
-                    </nav>
+                    <Navbar isAuthenticated={this.props.isAuthenticated}/>
                     <main className="main-container">
                         <Switch>
                             <Route exact path={["/", "/home/:id", "/home/", "/home"]} component={Home}/>
@@ -53,6 +42,7 @@ class App extends React.Component {
                             <Route path="/meme/:id" component={MemePage}/>
                             <Route path="/random" component={RandomPage}/>
                             <Route path={"/user/:id"} component={User}/>
+                            <Route path={"/auth"} component={AuthPage}/>
                         </Switch>
                     </main>
                 </div>
@@ -61,5 +51,11 @@ class App extends React.Component {
     }
 }
 
-export default App;
+export default connect(state => {
+    return {
+        isAuthenticated: state.auth.isAuthenticated,
+        user: state.auth.data,
+        error: state.auth.error
+    };
+})(App);
 

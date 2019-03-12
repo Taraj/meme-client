@@ -11,32 +11,36 @@ import {fetchPost} from "../actions/fetchPost";
 class MemePage extends React.Component {
 
     componentWillMount() {
-        this.props.getPostWithComments(this.props.match.params.id);
+        this.props.fetchComments(this.props.match.params.id);
+        this.props.fetchPost(this.props.match.params.id);
     }
 
     render() {
-        if (this.props.fetchingError) {
-            return (
-                <div>
-                    <p>Przepraszamy wystąpił bład w ładowaniu elementów:</p>
-                    <p>{this.props.fetchingError.message}</p>
-                </div>
-            )
+
+        if (this.props.post === null && this.props.errorPost === null) {
+            return <p>Ładowanie...</p>;
         }
 
-        if (this.props.isFetching || this.props.postWithComments === null) {
+        if (this.props.post === null) {
+            return <p>Error :C</p>;
+        }
+
+        if (this.props.comments === null && this.props.errorComment === null) {
             return <p>Ładowanie...</p>;
+        }
+
+        if (this.props.errorComment === null) {
+            return <p>Error :C</p>;
         }
 
         return (
             <div>
-                <MemeItem key={this.props.postWithComments.randomPost.id}
-                          meme={this.props.postWithComments.randomPost}/>
+                <MemeItem meme={this.props.post}/>
                 <div className="meme-comments">
                     <header className="meme-comments-header">Komentarze</header>
                     <div className="meme-comments-container">
-                        {this.props.postWithComments.comments.map(item => {
-                            return <Comment key={item.id} comment={item}/>
+                        {this.props.comments.map(item => {
+                            return <Comment comment={item}/>
                         })}
                     </div>
                 </div>
@@ -48,11 +52,10 @@ class MemePage extends React.Component {
 
 export default connect(state => {
     return {
-        post: state.randomPost.posts,
-        errorPost: state.randomPost.error,
+        post: state.post.post,
+        errorPost: state.post.error,
         comments: state.comments.comments,
         errorComment: state.comments.comments
-
     };
 }, dispatch => {
     return {
