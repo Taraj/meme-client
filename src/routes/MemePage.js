@@ -16,32 +16,30 @@ class MemePage extends React.Component {
     }
 
     render() {
+        const {
+            post,
+            PostIsLoaded,
+            comments,
+            CommentIsLoaded
+        } = this.props;
 
-        if (this.props.post === null && this.props.errorPost === null) {
+        if (PostIsLoaded || CommentIsLoaded) {
             return <p>Ładowanie...</p>;
         }
 
-        if (this.props.post === null) {
-            return <p>Error :C</p>;
-        }
-
-        if (this.props.comments === null && this.props.errorComment === null) {
-            return <p>Ładowanie...</p>;
-        }
-
-        if (this.props.errorComment === null) {
+        if (post === null || comments === null) {
             return <p>Error :C</p>;
         }
 
         return (
             <div>
-                <MemeItem meme={this.props.post}/>
+                <MemeItem meme={post}/>
                 <div className="meme-comments">
                     <header className="meme-comments-header">Komentarze</header>
                     <div className="meme-comments-container">
-                        {this.props.comments.map(item => {
-                            return <Comment comment={item}/>
-                        })}
+                        {comments.map(item =>
+                            <Comment comment={item}/>
+                        )}
                     </div>
                 </div>
             </div>
@@ -54,8 +52,11 @@ export default connect(state => {
     return {
         post: state.post.post,
         errorPost: state.post.error,
+        PostIsLoaded: state.post.isLoaded,
+
         comments: state.comments.comments,
-        errorComment: state.comments.comments
+        errorComment: state.comments.comments,
+        CommentIsLoaded: state.comments.isLoaded
     };
 }, dispatch => {
     return {

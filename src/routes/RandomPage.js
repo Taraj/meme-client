@@ -16,18 +16,19 @@ class RandomPage extends React.Component {
     };
 
     render() {
+        const {post, isLoaded} = this.props;
 
-        if (this.props.post === null && this.props.error === null) {
+        if (!isLoaded) {
             return <p>Ładowanie...</p>;
         }
 
-        if (this.props.post === null) {
+        if (post === null) {
             return <p>Error :C</p>;
         }
 
         return (
             <div>
-                <MemeItem meme={this.props.post}/>
+                <MemeItem meme={post}/>
                 <button onClick={this.refreshMeme} className="main-container-long-button">
                     Losuj Dalej
                 </button>
@@ -39,7 +40,8 @@ class RandomPage extends React.Component {
 export default connect(state => {
     return {
         post: state.randomPost.post,
-        error: state.randomPost.error
+        error: state.randomPost.error,
+        isLoaded: state.randomPost.isLoaded,
     };
 }, dispatch => {
     return {

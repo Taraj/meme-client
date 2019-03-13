@@ -2,7 +2,8 @@ import {FETCH_MAIN_PAGE_REQUEST, FETCH_MAIN_PAGE_FAILURE, FETCH_MAIN_PAGE_SUCCES
 
 export function mainPage(state = {
     posts: null,
-    error: null
+    error: null,
+    isLoaded: false
 }, action) {
     switch (action.type) {
         case FETCH_MAIN_PAGE_SUCCESS:
@@ -23,17 +24,20 @@ export function mainPage(state = {
                         dislikes: item.dislikes
                     }
                 }),
-                error: null
+                error: null,
+                isLoaded: true
             });
         case FETCH_MAIN_PAGE_FAILURE:
             return Object.assign({}, state, {
                 posts: null,
-                error: action.error
+                error: action.error,
+                isLoaded: true
             });
         case FETCH_MAIN_PAGE_REQUEST:
             return Object.assign({}, state, {
                 posts: null,
-                error: null
+                error: null,
+                isLoaded: false
             });
         default:
             return state

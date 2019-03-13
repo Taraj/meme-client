@@ -2,7 +2,8 @@ import {FETCH_QUEUE_PAGE_REQUEST, FETCH_QUEUE_PAGE_FAILURE, FETCH_QUEUE_PAGE_SUC
 
 export function queuePage(state = {
     posts: null,
-    error: null
+    error: null,
+    isLoaded: false
 }, action) {
     switch (action.type) {
         case FETCH_QUEUE_PAGE_SUCCESS:
@@ -23,17 +24,20 @@ export function queuePage(state = {
                         dislikes: item.dislikes
                     }
                 }),
-                error: null
+                error: null,
+                isLoaded: true
             });
         case FETCH_QUEUE_PAGE_FAILURE:
             return Object.assign({}, state, {
                 posts: null,
-                error: action.error
+                error: action.error,
+                isLoaded: true
             });
         case FETCH_QUEUE_PAGE_REQUEST:
             return Object.assign({}, state, {
                 posts: null,
-                error: null
+                error: null,
+                isLoaded: false
             });
 
         default:

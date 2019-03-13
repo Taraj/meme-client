@@ -2,7 +2,8 @@ import {FETCH_RANDOM_POST_REQUEST, FETCH_RANDOM_POST_FAILURE, FETCH_RANDOM_POST_
 
 export function randomPost(state = {
     post: null,
-    error: null
+    error: null,
+    isLoaded: false
 }, action) {
     switch (action.type) {
         case FETCH_RANDOM_POST_SUCCESS:
@@ -21,17 +22,20 @@ export function randomPost(state = {
                     likes: action.response.likes,
                     dislikes: action.response.dislikes
                 },
-                error: null
+                error: null,
+                isLoaded: true
             });
         case FETCH_RANDOM_POST_FAILURE:
             return Object.assign({}, state, {
                 post: null,
-                error: action.error
+                error: action.error,
+                isLoaded: true
             });
         case FETCH_RANDOM_POST_REQUEST:
             return Object.assign({}, state, {
                 post: null,
-                error: null
+                error: null,
+                isLoaded: false
             });
         default:
             return state

@@ -8,11 +8,8 @@ import MemeItem from '../components/memeItem/MemeItem'
 class HomePage extends React.Component {
 
     pageId = () => {
-        if (typeof this.props.match.params.id === "undefined") {
-            return 1;
-        } else {
-            return this.props.match.params.id;
-        }
+        const {id} = this.props.match.params;
+        return (id ? id : 1);
     };
 
     componentDidMount() {
@@ -26,20 +23,21 @@ class HomePage extends React.Component {
     }
 
     render() {
+        const {posts, isLoaded} = this.props;
 
-        if (this.props.posts === null && this.props.error === null) {
+        if (!isLoaded) {
             return <p>Ładowanie...</p>;
         }
 
-        if (this.props.posts === null) {
+        if (posts === null) {
             return <p>Error :C</p>;
         }
 
         return (
             <div>
-                {this.props.posts.map(item => {
-                    return <MemeItem key={item.id} meme={item}/>
-                })}
+                {posts.map(item =>
+                    <MemeItem key={item.id} meme={item}/>
+                )}
                 <Link to={"/home/" + (parseInt(this.pageId()) + 1)} className="main-container-long-button">
                     Następna Strona
                 </Link>
@@ -51,7 +49,8 @@ class HomePage extends React.Component {
 export default connect(state => {
     return {
         posts: state.mainPage.posts,
-        error: state.mainPage.error
+        error: state.mainPage.error,
+        isLoaded: state.mainPage.isLoaded,
     };
 }, dispatch => {
     return {

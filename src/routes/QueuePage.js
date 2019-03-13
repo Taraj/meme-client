@@ -3,17 +3,14 @@ import {connect} from "react-redux";
 import {Link} from 'react-router-dom'
 import {fetchQueuePage} from "../actions/fetchQueuePage";
 
-import MemeItem from'../components/memeItem/MemeItem'
+import MemeItem from '../components/memeItem/MemeItem'
 
 
 class QueuePage extends React.Component {
 
     pageId = () => {
-        if (typeof this.props.match.params.id === "undefined") {
-            return 1;
-        } else {
-            return this.props.match.params.id;
-        }
+        const {id} = this.props.match.params;
+        return (id ? id : 1);
     };
 
     componentDidMount() {
@@ -27,19 +24,21 @@ class QueuePage extends React.Component {
     }
 
     render() {
-        if (this.props.posts === null && this.props.error === null) {
+        const {posts, isLoaded} = this.props;
+
+        if (!isLoaded) {
             return <p>Ładowanie...</p>;
         }
 
-        if (this.props.posts === null) {
+        if (posts === null) {
             return <p>Error :C</p>;
         }
 
         return (
             <div>
-                {this.props.posts.map(item => {
-                    return <MemeItem key={item.id} meme={item}/>
-                })}
+                {posts.map(item =>
+                    <MemeItem key={item.id} meme={item}/>
+                )}
                 <Link to={"/queue/" + (parseInt(this.pageId()) + 1)} className="main-container-long-button">
                     Następna Strona
                 </Link>
@@ -51,7 +50,8 @@ class QueuePage extends React.Component {
 export default connect(state => {
     return {
         posts: state.queuePage.posts,
-        error: state.queuePage.error
+        error: state.queuePage.error,
+        isLoaded: state.queuePage.isLoaded,
     };
 }, dispatch => {
     return {
