@@ -23,7 +23,7 @@ class MemePage extends React.Component {
             CommentIsLoaded
         } = this.props;
 
-        if (PostIsLoaded || CommentIsLoaded) {
+        if (!PostIsLoaded || !CommentIsLoaded) {
             return <p>Ładowanie...</p>;
         }
 

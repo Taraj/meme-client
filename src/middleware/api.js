@@ -35,16 +35,13 @@ export default store => next => action => {
     let {endpoint, types, authenticated, config} = callAPI;
 
     callApi(endpoint, authenticated, config)
-
         .then(response => {
-            console.log(response);
             next({
                 response: response,
                 type: types.successType
             })
         })
         .catch(err => {
-            console.error(err);
             next({
                 error: err,
                 type: types.errorType

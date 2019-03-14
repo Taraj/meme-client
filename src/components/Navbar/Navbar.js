@@ -1,19 +1,39 @@
 import React from 'react';
-import {Link} from "react-router-dom";
+import {Link} from 'react-router-dom';
+
+import './Navbar.less';
 
 
 export class Navbar extends React.Component {
+
+    constructor(props) {
+        super(props);
+
+        this.state = {active: false};
+    }
+
+    toggleMobileMenu = () => {
+        this.setState({
+            active: !this.state.active
+        })
+    };
+
     render() {
+        const {active} = this.state;
         return (
             <nav className="menu-main">
                 <header className="menu-main-title">
                     Meme
                 </header>
-                <Link className={"menu-main-link"} to="/">Główna</Link>
-                <Link className={"menu-main-link"} to="/queue">Poczekalnia</Link>
-                <Link className={"menu-main-link"} to="/random">Losowe</Link>
-                <Link className={"menu-main-link"} to={this.props.isAuthenticated ? "/account" : "/auth"}>Konto</Link>
-                <i className="fas fa-bars menu-main-button"/>
+                <div className={"menu-main-link-container" +
+                (active ? " active" : "")} onClick={this.toggleMobileMenu}>
+                    <Link className={"menu-main-link"} to="/">Główna</Link>
+                    <Link className={"menu-main-link"} to="/queue">Poczekalnia</Link>
+                    <Link className={"menu-main-link"}  to="/random">Losowe</Link>
+                    <Link className={"menu-main-link"}
+                          to={this.props.isAuthenticated ? "/account" : "/auth"}>Konto</Link>
+                </div>
+                <i onClick={this.toggleMobileMenu} className="fas fa-bars menu-main-button"/>
             </nav>
         );
     }
