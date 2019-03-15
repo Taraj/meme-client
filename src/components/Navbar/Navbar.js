@@ -29,9 +29,12 @@ export class Navbar extends React.Component {
                 (active ? " active" : "")} onClick={this.toggleMobileMenu}>
                     <Link className={"menu-main-link"} to="/">Główna</Link>
                     <Link className={"menu-main-link"} to="/queue">Poczekalnia</Link>
-                    <Link className={"menu-main-link"}  to="/random">Losowe</Link>
-                    <Link className={"menu-main-link"}
-                          to={this.props.isAuthenticated ? "/account" : "/auth"}>Konto</Link>
+                    <Link className={"menu-main-link"} to="/random">Losowe</Link>
+                    {this.props.isAuthenticated?
+                        <Link className={"menu-main-link"} to={"/account"}>Konto</Link>
+                        :
+                        <Link className={"menu-main-link"} to={"/login"}>Zaloguj</Link>
+                    }
                 </div>
                 <i onClick={this.toggleMobileMenu} className="fas fa-bars menu-main-button"/>
             </nav>

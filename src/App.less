@@ -1,87 +1,139 @@
 body {
-  padding: 0;
-  background-color: #252525;
-  margin: 0 0 100px;
-  color: white;
+    padding: 0;
+    background-color: #252525;
+    margin: 0 0 100px;
+    color: white;
 }
 
 a {
-  text-decoration: none;
-  color: white;
+    text-decoration: none;
+    color: white;
 }
 
 button {
-  color: white;
-  border: none;
+    color: white;
+    border: none;
 }
-
 
 
 .main-container {
-  width: 700px;
-  margin: 100px auto;
-  @media only screen and (max-width: 750px) {
-    width: 90vw;
-  }
-  @media only screen and (max-width: 200px) {
-    width: 190px;
-  }
+    width: 700px;
+    margin: 100px auto;
+    @media only screen and (max-width: 750px) {
+        width: 95vw;
+    }
+    @media only screen and (max-width: 200px) {
+        width: 190px;
+    }
 }
 
 .main-container-long-button {
-  display: block;
-  text-align: center;
-  background-color: #aa0000;
-  font-size: 40px;
-  padding: 10px;
-  cursor: pointer;
-  width: 100%;
-  box-sizing: border-box;
-  @media only screen and (max-width: 400px) {
-    margin-top: -75px;
-    font-size: 20px;
-  }
+    display: block;
+    text-align: center;
+    background-color: #aa0000;
+    font-size: 40px;
+    padding: 10px;
+    cursor: pointer;
+    width: 100%;
+    box-sizing: border-box;
+    @media only screen and (max-width: 400px) {
+        margin-top: -75px;
+        font-size: 20px;
+    }
 }
 
 .meme-comments {
-  margin-top: -75px;
+    margin-top: -75px;
 }
 
 .meme-comments-header {
-  padding: 10px;
-  font-size: 25px;
-  background-color: #1f1f1f;
-  display: block;
+    padding: 10px;
+    font-size: 25px;
+    background-color: #1f1f1f;
+    display: block;
 }
 
 .meme-comments-container {
-  margin-top: 2px;
-  background-color: #1f1f1f;
+    margin-top: 2px;
+    background-color: #1f1f1f;
 }
 
 .user-main {
-  background-color: #1f1f1f;
-  display: flex;
+    background-color: #1f1f1f;
+    display: flex;
 }
 
 .user-main-avatar {
-  width: 250px;
-  height: 250px;
-  display: flex;
-  justify-content: center;
-  align-items: center;
+    width: 250px;
+    height: 250px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
 
 .user-main-avatar-img {
-  width: 200px;
-  height: 200px;
+    width: 200px;
+    height: 200px;
 }
 
 .user-main-info {
-  padding: 20px;
-  flex: 2;
+    padding: 20px;
+    flex: 2;
 }
 
 .user-main-info-nickname {
-  font-size: 30px;
+    font-size: 30px;
+}
+
+.main-auth-container {
+    border: 0.5px solid #444444;
+    border-radius: 10px;
+ text-align: center;
+
+}
+
+.main-auth-input {
+    margin: 50px auto;
+    color: white;
+    font-size: 30px;
+    display: block;
+    width: 90%;
+    background-color: inherit;
+    border: none;
+    padding: 10px 20px;
+    box-sizing: border-box;
+    border-bottom: 2px solid black;
+
+    &:focus {
+        border-bottom-color: white;
+    }
+}
+
+.main-auth-submit {
+    display: block;
+    width: 90%;
+    border: none;
+    cursor: pointer;
+    padding: 20px;
+    margin: 50px auto 0 auto;
+    background-color: #202020;
+    color: white;
+    font-size: 30px;
+    transition: box-shadow 0.1s ease-in;
+    will-change: box-shadow;
+    &:hover{
+        box-shadow: 0 0 10px #202020;
+    }
+}
+.main-auth-link{
+    text-decoration: underline;
+    color: #4285f4;
+    @media only screen and (max-width: 400px) {
+      display: block;
+    }
+}
+.main-auth-error{
+    color: #aa0000;
+    margin-top: 30px;
+    margin-bottom: -20px;
 }

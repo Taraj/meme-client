@@ -12,24 +12,10 @@ import User from './routes/UserPage'
 import {connect} from "react-redux";
 
 import {Navbar} from './components/Navbar/Navbar';
-import AuthPage from "./routes/AuthPage";
+import LoginPage from "./routes/LoginPage";
+import RegisterPage from "./routes/RegisterPage";
 
 class App extends React.Component {
-    constructor(props) {
-        super(props);
-        this.state = {
-            mobileMenuIsOpen: ""
-        }
-    }
-
-    toggleMenu = () => {
-        if (this.state.mobileMenuIsOpen === "") {
-            this.setState({mobileMenuIsOpen: " menu-main-link-active"})
-        } else {
-            this.setState({mobileMenuIsOpen: ""})
-        }
-    };
-
     render() {
         return (
             <BrowserRouter>
@@ -42,7 +28,8 @@ class App extends React.Component {
                             <Route path="/meme/:id" component={MemePage}/>
                             <Route path="/random" component={RandomPage}/>
                             <Route path={"/user/:id"} component={User}/>
-                            <Route path={"/auth"} component={AuthPage}/>
+                            <Route path={"/login"} component={LoginPage}/>
+                            <Route path={"/register"} component={RegisterPage}/>
                         </Switch>
                     </main>
                 </div>

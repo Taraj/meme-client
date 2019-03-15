@@ -1,9 +1,10 @@
 import React from 'react';
 import {connect} from "react-redux";
 import {login} from '../actions/auth';
+import {Link} from "react-router-dom";
 
 
-class AuthPage extends React.Component {
+class LoginPage extends React.Component {
     constructor(props) {
         super(props);
         this.state = {
@@ -40,13 +41,22 @@ class AuthPage extends React.Component {
         }
 
         return (
-
-            <form onSubmit={this.login}>
-                {this.props.error ? this.props.error.message : ""}
-                <input value={this.state.username} onChange={this.changeUsername} type="text"/>
-                <input value={this.state.password} onChange={this.changePassword} type="password"/>
-                <input type="submit"/>
-            </form>
+            <div className={"main-auth-container"}>
+                {this.props.error ?
+                    <div className={"main-auth-error"}> {this.props.error.message}</div>
+                    :
+                    ""
+                }
+                <form onSubmit={this.login}>
+                    <input value={this.state.username} onChange={this.changeUsername} className={"main-auth-input"}
+                           type="text" placeholder={"Login"}/>
+                    <input value={this.state.password} onChange={this.changePassword} className={"main-auth-input"}
+                           type="password" placeholder={"Hasło"}/>
+                    <input type="submit" className={"main-auth-submit"} value={"Zaloguj"}/>
+                </form>
+                <p>Nie masz jeszcze konta? <Link className={"main-auth-link"} to={"/register"}>Zarejestruj!!!</Link>
+                </p>
+            </div>
         );
     }
 }
@@ -61,4 +71,4 @@ export default connect(state => {
     return {
         login: (username, password) => dispatch(login(username, password))
     };
-})(AuthPage);
+})(LoginPage);
