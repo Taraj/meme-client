@@ -1,8 +1,9 @@
-@active-mobile-menu: 650px;
+@active-mobile-menu: 800px;
 
-@active-small-desktop-menu: 850px;
+@active-small-desktop-menu: 1000px;
 
 .menu-main {
+    z-index: 10;
     background-color: #181818;
     position: fixed;
     top: 0;
@@ -11,7 +12,6 @@
     display: flex;
     padding-right: 50px;
     justify-content: flex-end;
-    height: 50px;
     font-size: 25px;
     @media only screen and (max-width: @active-mobile-menu) {
         display: block;
@@ -49,17 +49,17 @@
 
 
 .menu-main-link {
-
     padding: 10px;
     margin: 0 20px;
+    border-bottom: solid #181818;
 
     &:hover {
-        border-bottom: solid white;
+        border-bottom-color: white;
     }
 
     @media only screen and (max-width: @active-mobile-menu) {
         display: block;
-        border-bottom: none !important;
+        border-bottom-color: #181818 !important;
     }
 }
 

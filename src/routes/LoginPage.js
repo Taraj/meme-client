@@ -13,26 +13,18 @@ class LoginPage extends React.Component {
         }
     }
 
-    login = (e) => {
+    login = e => {
         e.preventDefault();
-        this.props.login(this.state.username, this.state.password);
+        this.props.login(this.state.username.trim(), this.state.password.trim());
     };
 
-    changeUsername = e => {
-        this.setState(
-            {
-                username: e.target.value,
-                password: this.state.password
-            });
+    inputEvent = e => {
+        const {value, name} = e.target;
+        this.setState({
+            ...this.state,
+            [name]: value
+        })
     };
-    changePassword = e => {
-        this.setState(
-            {
-                username: this.state.username,
-                password: e.target.value
-            });
-    };
-
 
     render() {
 
@@ -48,9 +40,9 @@ class LoginPage extends React.Component {
                     ""
                 }
                 <form onSubmit={this.login}>
-                    <input value={this.state.username} onChange={this.changeUsername} className={"main-auth-input"}
+                    <input value={this.state.username} onChange={this.inputEvent} name={"username"} className={"main-auth-input"}
                            type="text" placeholder={"Login"}/>
-                    <input value={this.state.password} onChange={this.changePassword} className={"main-auth-input"}
+                    <input value={this.state.password} onChange={this.inputEvent} name={"password"} className={"main-auth-input"}
                            type="password" placeholder={"Hasło"}/>
                     <input type="submit" className={"main-auth-submit"} value={"Zaloguj"}/>
                 </form>

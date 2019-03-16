@@ -1,6 +1,6 @@
 import React from 'react';
 import {connect} from "react-redux";
-import {login} from '../actions/auth';
+import {register} from '../actions/auth';
 import {Link} from "react-router-dom";
 
 
@@ -12,79 +12,102 @@ class RegisterPage extends React.Component {
             username: "",
             email: "",
             password: "",
-            confirmPassword: ""
+            confirmPassword: "",
+            inputError: null
         }
     }
 
-    login = (e) => {
+    register = (e) => {
         e.preventDefault();
-        this.props.login(this.state.username, this.state.password);
+        const {
+            nickname,
+            username,
+            email,
+            password,
+            confirmPassword
+        } = this.state;
+
+        this.setState({
+            inputError: null
+        });
+
+        if (password !== confirmPassword) {
+            this.setState({
+                inputError: "Hasła są różne."
+            });
+            return
+        }
+
+        if (username.length < 3 || username.length > 32) {
+            this.setState({
+                inputError: "Login musi mieć od 3 do 32 znaków."
+            });
+            return
+        }
+
+        if (nickname.length < 3 || nickname.length > 32) {
+            this.setState({
+                inputError: "Nick musi mieć od 3 do 32 znaków."
+            });
+            return
+        }
+
+        if (password.length < 3 || password.length > 32) {
+            this.setState({
+                inputError: "Hasło musi mieć od 3 do 32 znaków."
+            });
+            return
+        }
+
+        this.props.register(nickname.trim(), username.trim(), email.trim(), password.trim());
     };
 
-    changeNickname = e => {
-        this.setState(
-            {
-                ...this.state,
-                nickname: e.target.value
-            });
+    inputEvent = e => {
+        const {value, name} = e.target;
+        this.setState({
+            [name]: value
+        })
     };
 
-    changeUsername = e => {
-        this.setState(
-            {
-                ...this.state,
-                username: e.target.value
-            });
-    };
 
-    changeEmail = e => {
-        this.setState(
-            {
-                ...this.state,
-                email: e.target.value
-            });
-    };
-    changePassword = e => {
-        this.setState(
-            {
-                ...this.state,
-                password: e.target.value
-            });
-    };
-    changeConfirmPassword = e => {
-        this.setState(
-            {
-                ...this.state,
-                confirmPassword: e.target.value
-            });
-    };
+    printError = () => {
+        if (this.state.inputError) {
+            return (
+                <div className={"main-auth-error"}>{this.state.inputError}</div>
+            )
+        }
 
+        if (this.props.error) {
+            return (
+                <div className={"main-auth-error"}>{this.props.error.message}</div>
+            )
+        }
+    };
 
     render() {
-
         if (this.props.isAuthenticated) {
             return <p>Jesteś już zalogowany/a</p>;
         }
 
         return (
             <div className={"main-auth-container"}>
-                {this.props.error ?
-                    <div className={"main-auth-error"}>złe cos tam cos tam</div>
-                    :
-                    ""
-                }
-                <form onSubmit={this.login}>
-                    <input value={this.state.nickname} onChange={this.changeNickname} className={"main-auth-input"}
-                           type="text" placeholder={"Nick"}/>
-                    <input value={this.state.username} onChange={this.changeUsername} className={"main-auth-input"}
-                           type="text" placeholder={"Login"}/>
-                    <input value={this.state.email} onChange={this.changeEmail} className={"main-auth-input"}
-                           type="email" placeholder={"Email"}/>
-                    <input value={this.state.password} onChange={this.changePassword} className={"main-auth-input"}
-                           type="password" placeholder={"Hasło"}/>
-                    <input value={this.state.changeConfirmPassword} onChange={this.changeConfirmPassword} className={"main-auth-input"}
-                           type="password" placeholder={"Powtórz hasło"}/>
-
+                {this.printError()}
+                <form onSubmit={this.register}>
+                    <input value={this.state.nickname} onChange={this.inputEvent} name={"nickname"}
+                           className={"main-auth-input"}
+                           type="text" placeholder={"Nick"} required min={3}/>
+                    <input value={this.state.username} onChange={this.inputEvent} name={"username"}
+                           className={"main-auth-input"}
+                           type="text" placeholder={"Login"} required/>
+                    <input value={this.state.email} onChange={this.inputEvent} name={"email"}
+                           className={"main-auth-input"}
+                           type="email" placeholder={"Email"} required/>
+                    <input value={this.state.password} onChange={this.inputEvent} name={"password"}
+                           className={"main-auth-input"}
+                           type="password" placeholder={"Hasło"} required/>
+                    <input value={this.state.confirmPassword} onChange={this.inputEvent} name={"confirmPassword"}
+                           className={"main-auth-input"}
+                           type="password" placeholder={"Powtórz hasło"} required/>
 
                     <input type="submit" className={"main-auth-submit"} value={"Zarejestruj"}/>
                 </form>
@@ -103,6 +126,6 @@ export default connect(state => {
     };
 }, dispatch => {
     return {
-        login: (username, password) => dispatch(login(username, password))
+        register: (nickname, username, email, password) => dispatch(register(nickname, username, email, password))
     };
 })(RegisterPage);

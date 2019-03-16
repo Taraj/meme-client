@@ -8,7 +8,6 @@ export class Navbar extends React.Component {
 
     constructor(props) {
         super(props);
-
         this.state = {active: false};
     }
 
@@ -17,6 +16,7 @@ export class Navbar extends React.Component {
             active: !this.state.active
         })
     };
+
 
     render() {
         const {active} = this.state;
@@ -30,11 +30,16 @@ export class Navbar extends React.Component {
                     <Link className={"menu-main-link"} to="/">Główna</Link>
                     <Link className={"menu-main-link"} to="/queue">Poczekalnia</Link>
                     <Link className={"menu-main-link"} to="/random">Losowe</Link>
-                    {this.props.isAuthenticated?
+                    {this.props.isAuthenticated ? (
                         <Link className={"menu-main-link"} to={"/account"}>Konto</Link>
-                        :
+                    ) : (
                         <Link className={"menu-main-link"} to={"/login"}>Zaloguj</Link>
-                    }
+                    )}
+                    {this.props.isAuthenticated ? (
+                        <Link className={"menu-main-link"} to={"/logout"}>Wyloguj</Link>
+                    ) : (
+                        null
+                    )}
                 </div>
                 <i onClick={this.toggleMobileMenu} className="fas fa-bars menu-main-button"/>
             </nav>

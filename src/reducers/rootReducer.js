@@ -6,6 +6,7 @@ import {mainPage} from './mainPage';
 import {comments} from './comments';
 import {post} from './post';
 import {auth} from './auth'
+import {addComment} from './addComment';
 
 const rootReducer = combineReducers({
     randomPost: randomPost,
@@ -13,7 +14,8 @@ const rootReducer = combineReducers({
     queuePage: queuePage,
     comments: comments,
     post: post,
-    auth: auth
+    auth: auth,
+    addComment: addComment
 });
 
 export default rootReducer

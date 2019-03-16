@@ -1,36 +1,58 @@
-import {LOGIN_REQUEST, LOGIN_FAILURE, LOGIN_SUCCESS, LOGOUT_REQUEST} from '../actions/auth';
+import {AUTH_REQUEST, AUTH_FAILURE, AUTH_SUCCESS, LOGOUT_REQUEST} from '../actions/auth';
 
-export function auth(state = {
-    isAuthenticated: !!localStorage.getItem('id_token'),
-    data: null,
-    error: null
-}, action) {
+
+function initState() {
+    if (localStorage.getItem('auth')) {
+        const {nickname, admin} = JSON.parse(localStorage.getItem('auth'));
+        return {
+            isAuthenticated: true,
+            data: {
+                nickname: nickname,
+                admin: admin
+            },
+            error: null
+        }
+    }
+    return {
+        isAuthenticated: false,
+        data: null,
+        error: null
+    }
+}
+
+
+export function auth(state = initState(), action) {
     switch (action.type) {
-        case LOGIN_SUCCESS:
-            localStorage.setItem('id_token', action.response.accessToken);
+        case AUTH_SUCCESS:
+            localStorage.setItem('auth', JSON.stringify({
+                token: action.response.accessToken,
+                admin: action.response.admin,
+                nickname: action.response.nickname
+            }));
             return Object.assign({}, state, {
                 isAuthenticated: true,
                 data: {
                     nickname: action.response.nickname,
-                    role: action.response.accountType
+                    admin: action.response.admin
                 },
                 error: null
             });
-        case LOGIN_FAILURE:
+        case AUTH_FAILURE:
+            localStorage.removeItem('auth');
             return Object.assign({}, state, {
                 isAuthenticated: false,
                 data: null,
                 error: action.error
             });
-        case LOGIN_REQUEST:
-            localStorage.removeItem('id_token');
+        case AUTH_REQUEST:
+            localStorage.removeItem('auth');
             return Object.assign({}, state, {
                 isAuthenticated: false,
                 data: null,
                 error: null
             });
         case LOGOUT_REQUEST:
-            localStorage.removeItem('id_token');
+            localStorage.removeItem('auth');
             return Object.assign({}, state, {
                 isAuthenticated: false,
                 data: null,

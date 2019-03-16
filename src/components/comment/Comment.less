@@ -1,47 +1,89 @@
 
 .comment-item-container {
-  display: flex;
-  padding-bottom: 25px;
+    display: flex;
+    padding-bottom: 25px;
 }
 
 .comment-item-author-image {
-  width: 100px;
-  height: 100px;
-  display: flex;
-  @media only screen and (max-width: 450px) {
-    display: none;
-  }
+    width: 100px;
+    height: 100px;
+    display: flex;
+    @media only screen and (max-width: 450px) {
+        display: none;
+    }
 }
 
 .comment-item-author-image-avatar {
-  width: 75px;
-  height: 75px;
-  display: block;
-  margin: auto;
+    width: 75px;
+    height: 75px;
+    display: block;
+    margin: auto;
 }
 
 .comment-item-main {
-  flex: 2;
+    flex: 2;
 }
 
-.comment-item-author-image-link{
-  display: block;
-  margin: auto;
+.comment-item-author-image-link {
+    display: block;
+    margin: auto;
 }
 
 
 .comment-item-main-info {
-  padding: 10px 10px;
-  font-size: 20px;
-  display: block;
+    padding: 10px 10px;
+    font-size: 20px;
+    display: block;
 }
 
-.comment-item-content{
-  padding: 10px 10px;
-  @media only screen and (max-width: 450px) {
-    padding: 0 30px;
-  }
+.comment-item-content {
+    padding: 10px 10px;
+    word-break:break-all;
+    @media only screen and (max-width: 450px) {
+        padding: 0 30px;
+    }
 }
-.comment-item-main-info-author{
-  padding-right: 10px;
+
+.comment-item-main-info-author {
+    padding-right: 10px;
+}
+
+.comment-input-container {
+    background-color: #313131;
+    font-size: 25px;
+    padding: 10px 15px 50px 15px;
+    margin-top: 15px;
+    position: relative;
+
+}
+
+.comment-input {
+    background-color: #444444;
+    width: 100%;
+    border: none;
+    min-height: 100px;
+    margin: 20px 0 10px 0;
+    resize: vertical;
+    color: white;
+    font-size: 20px;
+    padding: 10px;
+    box-sizing: border-box;
+}
+
+.comment-submit {
+    display: block;
+    position: absolute;
+    right: 15px;
+    border: none;
+    font-size: 20px;
+    cursor: pointer;
+    padding: 5px 20px;
+    background-color: #aa0000;
+    transition: box-shadow 0.1s ease-in;
+    will-change: box-shadow;
+    color: white;
+
+    &:hover {
+        box-shadow: 0 0 10px #aa0000;
+    }
 }

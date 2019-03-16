@@ -3,17 +3,26 @@ const BASE_URL = 'http://localhost:8080/api/v1';
 
 export const CALL_API = Symbol('Call API');
 
-function callApi(endpoint, authenticated, config = {}) {
+function callApi(endpoint, authenticated, config = {
+    headers: new Headers()
+}) {
 
-    let token = localStorage.getItem('id_token') || null;
-
-    if (authenticated && token) {
-        config.headers.push({'Authorization': `Bearer ${token}`});
+    if (authenticated) {
+        const auth = localStorage.getItem('auth');
+        if (auth) {
+            const {token} = JSON.parse(auth);
+            config.headers.append('Authorization', `Bearer ${token}`);
+        }
     }
-
     return new Promise((resolve, reject) => {
         return fetch(BASE_URL + endpoint, config)
             .then(response => {
+                if (!response.headers.get("Content-Type")) {
+                    if (response.status >= 400) {
+                        reject({});
+                    }
+                    resolve({})
+                }
                 response.json().then(json => {
                     if (response.status >= 400) {
                         reject(json);
@@ -23,7 +32,6 @@ function callApi(endpoint, authenticated, config = {}) {
             }).catch(err => reject(err))
     });
 }
-
 
 export default store => next => action => {
     const callAPI = action[CALL_API];

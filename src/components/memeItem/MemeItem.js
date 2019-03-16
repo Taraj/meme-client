@@ -57,7 +57,7 @@ class MemeItem extends React.Component {
                         <button onClick={this.like}
                                 className="meme-main-feedback-like">+{this.state.likes}</button>
                         <button onClick={this.dislike}
-                                className="meme-main-feedback-dislike">-{this.state.dislikes}</button>
+                                className="meme-main-feedback-dislike">{-1*this.state.dislikes}</button>
                     </div>
                 </div>
             </div>
