@@ -1,21 +1,21 @@
-import {ADD_COMMENTS_FAILURE,ADD_COMMENTS_REQUEST,ADD_COMMENTS_SUCCESS} from '../actions/addComment';
+import{ADD_FEEDBACK_FAILURE, ADD_FEEDBACK_REQUEST, ADD_FEEDBACK_SUCCESS} from "../../actions/add/addFeedback";
 
-export function addComment(state = {
+export function addFeedback(state = {
     error: null,
     isAdded: false
 }, action) {
     switch (action.type) {
-        case ADD_COMMENTS_SUCCESS:
+        case ADD_FEEDBACK_SUCCESS:
             return Object.assign({}, state, {
                 error: null,
                 isAdded: true
             });
-        case ADD_COMMENTS_FAILURE:
+        case ADD_FEEDBACK_FAILURE:
             return Object.assign({}, state, {
                 error: action.error,
                 isAdded: true
             });
-        case ADD_COMMENTS_REQUEST:
+        case ADD_FEEDBACK_REQUEST:
             return Object.assign({}, state, {
                 error: null,
                 isAdded: false

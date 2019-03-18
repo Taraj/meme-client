@@ -1,4 +1,4 @@
-import {CALL_API} from '../middleware/api';
+import {CALL_API} from '../../middleware/api';
 
 export const FETCH_MAIN_PAGE_SUCCESS = 'FETCH_MAIN_PAGE_SUCCESS';
 export const FETCH_MAIN_PAGE_FAILURE = 'FETCH_MAIN_PAGE_FAILURE';
@@ -15,7 +15,7 @@ function prepareRequest() {
 function doRequest(page) {
     return {
         [CALL_API]: {
-            endpoint: '/posts?offset=' + 10 * (page - 1),
+            endpoint: '/posts?confirmed=true&offset=' + 10 * (page - 1),
             types: {
                 successType: FETCH_MAIN_PAGE_SUCCESS,
                 errorType: FETCH_MAIN_PAGE_FAILURE

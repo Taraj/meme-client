@@ -1,4 +1,4 @@
-import {CALL_API} from '../middleware/api';
+import {CALL_API} from '../../middleware/api';
 
 export const FETCH_COMMENTS_SUCCESS = 'FETCH_COMMENTS_SUCCESS';
 export const FETCH_COMMENTS_FAILURE = 'FETCH_COMMENTS_FAILURE';

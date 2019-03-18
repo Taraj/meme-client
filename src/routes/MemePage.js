@@ -5,9 +5,9 @@ import {connect} from "react-redux";
 import MemeItem from '../components/memeItem/MemeItem';
 import Comment from '../components/comment/Comment'
 
-import {fetchComments} from "../actions/fetchComments";
-import {fetchPost} from "../actions/fetchPost";
-import {addComment} from "../actions/addComment";
+import {fetchComments} from "../actions/fetch/fetchComments";
+import {fetchPost} from "../actions/fetch/fetchPost";
+import {addComment} from "../actions/add/addComment";
 
 class MemePage extends React.Component {
 

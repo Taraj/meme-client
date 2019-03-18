@@ -1,4 +1,4 @@
-import {CALL_API} from '../middleware/api';
+import {CALL_API} from '../../middleware/api';
 
 export const FETCH_RANDOM_POST_SUCCESS = 'FETCH_RANDOM_POST_SUCCESS';
 export const FETCH_RANDOM_POST_FAILURE = 'FETCH_RANDOM_POST_FAILURE';

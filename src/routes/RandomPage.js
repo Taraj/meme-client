@@ -2,7 +2,7 @@ import React from 'react';
 
 import MemeItem from '../components/memeItem/MemeItem';
 import {connect} from "react-redux";
-import {fetchRandomPost} from '../actions/fetchRandomPost';
+import {fetchRandomPost} from '../actions/fetch/fetchRandomPost';
 
 
 class RandomPage extends React.Component {

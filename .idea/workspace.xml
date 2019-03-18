@@ -2,22 +2,27 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="0d944b48-7d7a-4105-83e4-b6156cdc8d11" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/src/actions/addComment.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/reducers/addComment.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/routes/AccountPage.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/actions/add/addFeedback.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/reducers/add/addFeedback.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/App.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/App.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/actions/auth.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/actions/auth.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/Navbar/Navbar.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/Navbar/Navbar.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/Navbar/Navbar.less" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/Navbar/Navbar.less" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/comment/Comment.less" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/comment/Comment.less" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/actions/addComment.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/actions/add/addComment.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/actions/fetchComments.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/actions/fetch/fetchComments.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/actions/fetchMainPage.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/actions/fetch/fetchMainPage.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/actions/fetchPost.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/actions/fetch/fetchPost.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/actions/fetchQueuePage.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/actions/fetch/fetchQueuePage.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/actions/fetchRandomPost.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/actions/fetch/fetchRandomPost.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/components/memeItem/MemeItem.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/memeItem/MemeItem.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/middleware/api.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/middleware/api.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/reducers/auth.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/reducers/auth.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/reducers/addComment.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/reducers/add/addComment.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/reducers/comments.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/reducers/fetch/fetchComments.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/reducers/mainPage.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/reducers/fetch/fetchMainPage.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/reducers/post.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/reducers/fetch/fetchPost.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/reducers/queuePage.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/reducers/fetch/fetchQueuePage.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/reducers/randomPost.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/reducers/fetch/fetchRandomPost.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/reducers/rootReducer.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/reducers/rootReducer.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/routes/LoginPage.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/routes/LoginPage.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/routes/HomePage.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/routes/HomePage.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/routes/MemePage.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/routes/MemePage.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/routes/RegisterPage.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/routes/RegisterPage.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/routes/QueuePage.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/routes/QueuePage.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/routes/RandomPage.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/routes/RandomPage.js" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/.tmp/" />
     <ignored path="$PROJECT_DIR$/temp/" />
@@ -31,19 +36,19 @@
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/actions/addComment.js">
+        <entry file="file://$PROJECT_DIR$/src/actions/add/addComment.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="340">
-              <caret line="20" column="25" selection-start-line="20" selection-start-column="16" selection-end-line="20" selection-end-column="25" />
+            <state relative-caret-position="214">
+              <caret line="14" column="33" selection-start-line="14" selection-start-column="33" selection-end-line="14" selection-end-column="33" />
             </state>
           </provider>
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/routes/MemePage.js">
+        <entry file="file://$PROJECT_DIR$/src/components/memeItem/MemeItem.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="543">
-              <caret line="101" selection-start-line="101" selection-end-line="101" />
+            <state relative-caret-position="690">
+              <caret line="75" column="13" lean-forward="true" selection-start-line="75" selection-start-column="13" selection-end-line="75" selection-end-column="13" />
               <folding>
                 <element signature="e#0#26#0" expanded="true" />
               </folding>
@@ -52,52 +57,82 @@
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/reducers/rootReducer.js">
+        <entry file="file://$PROJECT_DIR$/src/routes/QueuePage.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="289">
-              <caret line="17" column="14" selection-start-line="17" selection-start-column="4" selection-end-line="17" selection-end-column="14" />
+            <state relative-caret-position="146">
+              <caret line="34" column="9" lean-forward="true" selection-start-line="34" selection-start-column="9" selection-end-line="34" selection-end-column="9" />
               <folding>
-                <element signature="e#0#38#0" expanded="true" />
+                <element signature="e#0#26#0" expanded="true" />
               </folding>
             </state>
           </provider>
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/reducers/addComment.js">
+        <entry file="file://$PROJECT_DIR$/src/actions/fetch/fetchQueuePage.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="68">
-              <caret line="4" column="11" selection-start-line="4" selection-start-column="4" selection-end-line="4" selection-end-column="11" />
+            <state relative-caret-position="527">
+              <caret line="31" column="1" lean-forward="true" selection-start-line="31" selection-start-column="1" selection-end-line="31" selection-end-column="1" />
             </state>
           </provider>
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/App.js">
+        <entry file="file://$PROJECT_DIR$/src/routes/MemePage.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-69">
-              <caret line="38" column="66" lean-forward="true" selection-start-line="38" selection-start-column="58" selection-end-line="38" selection-end-column="66" />
+            <state relative-caret-position="226">
+              <caret line="30" column="5" lean-forward="true" selection-start-line="26" selection-start-column="2" selection-end-line="30" selection-end-column="5" />
               <folding>
-                <element signature="e#0#25#0" expanded="true" />
+                <element signature="e#0#26#0" expanded="true" />
               </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/reducers/add/addComment.js">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="425">
+              <caret line="25" column="1" lean-forward="true" selection-start-line="25" selection-start-column="1" selection-end-line="25" selection-end-column="1" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/reducers/add/addFeedback.js">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="425">
+              <caret line="25" column="1" selection-start-line="25" selection-start-column="1" selection-end-line="25" selection-end-column="1" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/components/comment/Comment.less">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="390">
+              <caret line="40" column="25" selection-start-line="40" selection-start-column="25" selection-end-line="40" selection-end-column="25" />
             </state>
           </provider>
         </entry>
       </file>
       <file pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/src/middleware/api.js">
+        <entry file="file://$PROJECT_DIR$/src/actions/add/addFeedback.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state>
-              <caret column="37" selection-start-column="37" selection-end-column="39" />
+            <state relative-caret-position="119">
+              <caret line="7" column="27" selection-start-line="7" selection-start-column="27" selection-end-line="7" selection-end-column="27" />
             </state>
           </provider>
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/actions/fetchComments.js">
+        <entry file="file://$PROJECT_DIR$/src/reducers/rootReducer.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="493">
-              <caret line="29" column="26" selection-start-line="29" selection-start-column="17" selection-end-line="29" selection-end-column="26" />
+            <state relative-caret-position="323">
+              <caret line="19" column="15" selection-start-line="19" selection-start-column="4" selection-end-line="19" selection-end-column="15" />
+              <folding>
+                <element signature="e#0#38#0" expanded="true" />
+              </folding>
             </state>
           </provider>
         </entry>
@@ -117,12 +152,6 @@
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
-        <option value="$PROJECT_DIR$/src/Store.js" />
-        <option value="$PROJECT_DIR$/src/index.js" />
-        <option value="$PROJECT_DIR$/src/Main.less" />
-        <option value="$PROJECT_DIR$/src/memeItem/MemeItem.js" />
-        <option value="$PROJECT_DIR$/src/components/comment/Comment.js" />
-        <option value="$PROJECT_DIR$/src/components/memeItem/MemeItem.less" />
         <option value="$PROJECT_DIR$/public/index.html" />
         <option value="$PROJECT_DIR$/src/actions/post.js" />
         <option value="$PROJECT_DIR$/src/store.js" />
@@ -137,15 +166,10 @@
         <option value="$PROJECT_DIR$/src/routes/UserPage.js" />
         <option value="$PROJECT_DIR$/src/actions/fetchComments.js" />
         <option value="$PROJECT_DIR$/src/actions/fetchRandomPost.js" />
-        <option value="$PROJECT_DIR$/src/actions/fetchPost.js" />
-        <option value="$PROJECT_DIR$/src/actions/fetchQueuePage.js" />
-        <option value="$PROJECT_DIR$/src/actions/fetchMainPage.js" />
         <option value="$PROJECT_DIR$/src/actions/loginRequest.js" />
         <option value="$PROJECT_DIR$/src/reducers/queuePage.js" />
         <option value="$PROJECT_DIR$/src/reducers/post.js" />
         <option value="$PROJECT_DIR$/src/reducers/mainPage.js" />
-        <option value="$PROJECT_DIR$/src/reducers/comments.js" />
-        <option value="$PROJECT_DIR$/src/routes/QueuePage.js" />
         <option value="$PROJECT_DIR$/src/routes/RandomPage.js" />
         <option value="$PROJECT_DIR$/src/routes/HomePage.js" />
         <option value="$PROJECT_DIR$/src/routes/AuthPage.js" />
@@ -154,20 +178,31 @@
         <option value="$PROJECT_DIR$/src/reducers/auth.js" />
         <option value="$PROJECT_DIR$/src/routes/RegisterPage.js" />
         <option value="$PROJECT_DIR$/src/routes/LoginPage.js" />
-        <option value="$PROJECT_DIR$/src/components/memeItem/MemeItem.js" />
         <option value="$PROJECT_DIR$/src/App.js" />
         <option value="$PROJECT_DIR$/src/routes/AccountPage.js" />
         <option value="$PROJECT_DIR$/src/components/comment/CommentImput.js" />
         <option value="$PROJECT_DIR$/src/components/comment/CommentInput.js" />
         <option value="$PROJECT_DIR$/src/reducers/addComment.js" />
-        <option value="$PROJECT_DIR$/src/reducers/rootReducer.js" />
         <option value="$PROJECT_DIR$/src/reducers/randomPost.js" />
         <option value="$PROJECT_DIR$/src/components/Navbar/Navbar.less" />
         <option value="$PROJECT_DIR$/src/actions/auth.js" />
         <option value="$PROJECT_DIR$/src/actions/addComment.js" />
         <option value="$PROJECT_DIR$/src/components/comment/Comment.less" />
         <option value="$PROJECT_DIR$/src/routes/MemePage.js" />
+        <option value="$PROJECT_DIR$/src/actions/fetchQueuePage.js" />
         <option value="$PROJECT_DIR$/src/middleware/api.js" />
+        <option value="$PROJECT_DIR$/src/actions/fetchMainPage.js" />
+        <option value="$PROJECT_DIR$/src/actions/addFeedback.js" />
+        <option value="$PROJECT_DIR$/src/actions/fetchPost.js" />
+        <option value="$PROJECT_DIR$/src/reducers/fetchPost.js" />
+        <option value="$PROJECT_DIR$/src/reducers/comments.js" />
+        <option value="$PROJECT_DIR$/src/reducers/add/addFeedback.js" />
+        <option value="$PROJECT_DIR$/src/reducers/rootReducer.js" />
+        <option value="$PROJECT_DIR$/src/routes/QueuePage.js" />
+        <option value="$PROJECT_DIR$/src/actions/add/addComment.js" />
+        <option value="$PROJECT_DIR$/src/actions/fetch/fetchQueuePage.js" />
+        <option value="$PROJECT_DIR$/src/components/memeItem/MemeItem.js" />
+        <option value="$PROJECT_DIR$/src/actions/add/addFeedback.js" />
       </list>
     </option>
   </component>
@@ -199,11 +234,6 @@
             <path>
               <item name="meme-client" type="b2602c69:ProjectViewProjectNode" />
               <item name="meme-client" type="462c0819:PsiDirectoryNode" />
-              <item name="build" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="meme-client" type="b2602c69:ProjectViewProjectNode" />
-              <item name="meme-client" type="462c0819:PsiDirectoryNode" />
               <item name="public" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
@@ -221,6 +251,20 @@
               <item name="meme-client" type="b2602c69:ProjectViewProjectNode" />
               <item name="meme-client" type="462c0819:PsiDirectoryNode" />
               <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="actions" type="462c0819:PsiDirectoryNode" />
+              <item name="add" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="meme-client" type="b2602c69:ProjectViewProjectNode" />
+              <item name="meme-client" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="actions" type="462c0819:PsiDirectoryNode" />
+              <item name="fetch" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="meme-client" type="b2602c69:ProjectViewProjectNode" />
+              <item name="meme-client" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
               <item name="components" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
@@ -228,7 +272,7 @@
               <item name="meme-client" type="462c0819:PsiDirectoryNode" />
               <item name="src" type="462c0819:PsiDirectoryNode" />
               <item name="components" type="462c0819:PsiDirectoryNode" />
-              <item name="comment" type="462c0819:PsiDirectoryNode" />
+              <item name="memeItem" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
               <item name="meme-client" type="b2602c69:ProjectViewProjectNode" />
@@ -241,13 +285,14 @@
               <item name="meme-client" type="b2602c69:ProjectViewProjectNode" />
               <item name="meme-client" type="462c0819:PsiDirectoryNode" />
               <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="middleware" type="462c0819:PsiDirectoryNode" />
+              <item name="reducers" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
               <item name="meme-client" type="b2602c69:ProjectViewProjectNode" />
               <item name="meme-client" type="462c0819:PsiDirectoryNode" />
               <item name="src" type="462c0819:PsiDirectoryNode" />
               <item name="reducers" type="462c0819:PsiDirectoryNode" />
+              <item name="add" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
               <item name="meme-client" type="b2602c69:ProjectViewProjectNode" />
@@ -277,11 +322,11 @@
   </component>
   <component name="RecentsManager">
     <key name="MoveFile.RECENT_KEYS">
+      <recent name="C:\Users\Krzysiek\WebstormProjects\meme-client\src\actions\add" />
+      <recent name="C:\Users\Krzysiek\WebstormProjects\meme-client\src\actions\fetch" />
+      <recent name="C:\Users\Krzysiek\WebstormProjects\meme-client\src\reducers\add" />
+      <recent name="C:\Users\Krzysiek\WebstormProjects\meme-client\src\reducers\fetch" />
       <recent name="C:\Users\Krzysiek\WebstormProjects\meme-client\src\actions" />
-      <recent name="C:\Users\Krzysiek\WebstormProjects\meme-client\src\reducers" />
-      <recent name="C:\Users\Krzysiek\WebstormProjects\meme-client\src\components" />
-      <recent name="C:\Users\Krzysiek\WebstormProjects\meme-client\src" />
-      <recent name="C:\Users\Krzysiek\WebstormProjects\meme-client\src\dao" />
     </key>
   </component>
   <component name="RunDashboard">
@@ -340,7 +385,11 @@
       <workItem from="1552563101990" duration="4934000" />
       <workItem from="1552592892962" duration="972000" />
       <workItem from="1552649644976" duration="11213000" />
-      <workItem from="1552722706282" duration="23119000" />
+      <workItem from="1552722706282" duration="23655000" />
+      <workItem from="1552846698722" duration="1392000" />
+      <workItem from="1552915592191" duration="1542000" />
+      <workItem from="1552922751362" duration="1190000" />
+      <workItem from="1552926751393" duration="1915000" />
     </task>
     <task id="LOCAL-00001" summary="Init">
       <created>1552121495026</created>
@@ -405,30 +454,37 @@
       <option name="project" value="LOCAL" />
       <updated>1552679508560</updated>
     </task>
-    <option name="localTasksCounter" value="10" />
+    <task id="LOCAL-00010" summary="comments system">
+      <created>1552749297639</created>
+      <option name="number" value="00010" />
+      <option name="presentableId" value="LOCAL-00010" />
+      <option name="project" value="LOCAL" />
+      <updated>1552749297639</updated>
+    </task>
+    <option name="localTasksCounter" value="11" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="142807000" />
+    <option name="totallyTimeSpent" value="149382000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1936" height="1056" extended-state="6" />
     <editor active="true" />
     <layout>
-      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.2170706" />
+      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.2170706" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info id="npm" order="2" side_tool="true" />
       <window_info id="Favorites" order="3" side_tool="true" />
       <window_info anchor="bottom" id="Message" order="0" />
-      <window_info anchor="bottom" id="Find" order="1" weight="0.32936078" />
-      <window_info anchor="bottom" id="Run" order="2" sideWeight="0.49736565" visible="true" weight="0.046587214" />
-      <window_info anchor="bottom" id="Debug" order="3" weight="0.4" />
+      <window_info anchor="bottom" id="Find" order="1" sideWeight="0.49894625" weight="0.32936078" />
+      <window_info anchor="bottom" id="Run" order="2" sideWeight="0.49736565" weight="0.08992416" />
+      <window_info active="true" anchor="bottom" id="Debug" order="3" visible="true" weight="0.3997833" />
       <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
       <window_info anchor="bottom" id="TODO" order="6" />
       <window_info anchor="bottom" id="Docker" order="7" show_stripe_button="false" />
       <window_info anchor="bottom" id="Version Control" order="8" weight="0.32936078" />
-      <window_info anchor="bottom" id="Event Log" order="9" sideWeight="0.50263435" side_tool="true" weight="0.046587214" />
+      <window_info anchor="bottom" id="Event Log" order="9" sideWeight="0.50105375" side_tool="true" weight="0.32936078" />
       <window_info anchor="bottom" id="Terminal" order="10" sideWeight="0.49947312" weight="0.12242687" />
       <window_info anchor="right" id="Commander" internal_type="SLIDING" order="0" type="SLIDING" weight="0.4" />
       <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
@@ -440,16 +496,16 @@
       <window_info id="npm" order="2" side_tool="true" />
       <window_info id="Favorites" order="3" side_tool="true" />
       <window_info anchor="bottom" id="Message" order="0" />
-      <window_info anchor="bottom" id="Find" order="1" weight="0.32936078" />
-      <window_info anchor="bottom" id="Run" order="2" sideWeight="0.49894625" weight="0.25820568" />
+      <window_info anchor="bottom" id="Find" order="1" sideWeight="0.49894625" weight="0.32936078" />
+      <window_info anchor="bottom" id="Run" order="2" sideWeight="0.49736565" weight="0.2654388" />
       <window_info anchor="bottom" id="Debug" order="3" weight="0.4" />
       <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
       <window_info anchor="bottom" id="TODO" order="6" />
       <window_info anchor="bottom" id="Docker" order="7" show_stripe_button="false" />
       <window_info anchor="bottom" id="Version Control" order="8" weight="0.32936078" />
-      <window_info anchor="bottom" id="Event Log" order="9" sideWeight="0.50105375" side_tool="true" weight="0.35536295" />
-      <window_info anchor="bottom" id="Terminal" order="10" visible="true" weight="0.3564464" />
+      <window_info anchor="bottom" id="Event Log" order="9" sideWeight="0.50105375" side_tool="true" weight="0.32936078" />
+      <window_info anchor="bottom" id="Terminal" order="10" sideWeight="0.49947312" weight="0.12242687" />
       <window_info anchor="right" id="Commander" internal_type="SLIDING" order="0" type="SLIDING" weight="0.4" />
       <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
       <window_info anchor="right" content_ui="combo" id="Hierarchy" order="2" weight="0.25" />
@@ -468,11 +524,10 @@
     <MESSAGE value="refactor" />
     <MESSAGE value="menu mobile" />
     <MESSAGE value="auth" />
-    <option name="LAST_COMMIT_MESSAGE" value="auth" />
+    <MESSAGE value="comments system" />
+    <option name="LAST_COMMIT_MESSAGE" value="comments system" />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/src/types/post.js" />
-    <entry file="file://$PROJECT_DIR$/src/Main.less" />
     <entry file="file://$PROJECT_DIR$/public/favicon.ico" />
     <entry file="file://$PROJECT_DIR$/build/precache-manifest.da6dfb12df759d3f3c8a7734ef85996a.js" />
     <entry file="file://$PROJECT_DIR$/build/service-worker.js" />
@@ -2510,27 +2565,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/actions/fetchQueuePage.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="527">
-          <caret line="31" column="1" selection-start-line="31" selection-start-column="1" selection-end-line="31" selection-end-column="1" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/actions/fetchMainPage.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state>
-          <caret selection-end-line="31" selection-end-column="1" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/actions/fetchRandomPost.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="527">
-          <caret line="31" column="1" selection-start-line="31" selection-start-column="1" selection-end-line="31" selection-end-column="1" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/serviceWorker.js">
       <provider selected="true" editor-type-id="text-editor">
         <state>
@@ -2550,70 +2584,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/routes/RandomPage.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="299">
-          <caret line="27" lean-forward="true" selection-start-line="27" selection-end-line="27" />
-          <folding>
-            <element signature="e#0#26#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/routes/QueuePage.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="306">
-          <caret line="35" lean-forward="true" selection-start-line="35" selection-end-line="35" />
-          <folding>
-            <element signature="e#0#26#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/routes/UserPage.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="34">
-          <caret line="2" column="40" selection-start-line="2" selection-start-column="40" selection-end-line="2" selection-end-column="40" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/components/memeItem/MemeItem.less">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="781">
-          <caret line="69" column="3" selection-start-line="69" selection-start-column="3" selection-end-line="69" selection-end-column="3" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/components/memeItem/MemeItem.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="656">
-          <caret line="65" column="1" lean-forward="true" selection-start-line="65" selection-start-column="1" selection-end-line="65" selection-end-column="1" />
-          <folding>
-            <element signature="e#0#26#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/routes/HomePage.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="112">
-          <caret line="25" column="45" selection-end-line="59" />
-          <folding>
-            <element signature="e#0#26#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/components/comment/Comment.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="595">
-          <caret line="35" column="23" selection-end-line="35" selection-end-column="23" />
-          <folding>
-            <element signature="e#0#26#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/App.less">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="688">
@@ -2621,58 +2591,11 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/components/comment/CommentInput.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="204">
-          <caret line="12" column="19" lean-forward="true" selection-start-line="8" selection-start-column="10" selection-end-line="12" selection-end-column="19" />
-          <folding>
-            <element signature="e#0#26#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/routes/LoginPage.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="289">
-          <caret line="26" column="6" lean-forward="true" selection-start-line="20" selection-start-column="3" selection-end-line="26" selection-end-column="6" />
-          <folding>
-            <element signature="e#0#26#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/actions/fetchPost.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state>
-          <caret selection-end-line="31" selection-end-column="1" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/reducers/comments.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="374">
-          <caret line="22" column="30" selection-start-line="22" selection-start-column="30" selection-end-line="22" selection-end-column="30" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/reducers/queuePage.js">
+    <entry file="file://$PROJECT_DIR$/src/components/comment/CommentInput.js" />
+    <entry file="file://$PROJECT_DIR$/src/reducers/fetch/fetchMainPage.js">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="459">
           <caret line="27" column="30" selection-start-line="27" selection-start-column="30" selection-end-line="27" selection-end-column="30" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/reducers/mainPage.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="459">
-          <caret line="27" column="30" selection-start-line="27" selection-start-column="30" selection-end-line="27" selection-end-column="30" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/reducers/randomPost.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="714">
-          <caret line="42" column="1" lean-forward="true" selection-start-line="42" selection-start-column="1" selection-end-line="42" selection-end-column="1" />
         </state>
       </provider>
     </entry>
@@ -2680,6 +2603,23 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="-381">
           <caret column="18" selection-start-column="18" selection-end-column="18" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/App.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="340">
+          <caret line="38" column="66" lean-forward="true" selection-start-line="38" selection-start-column="58" selection-end-line="38" selection-end-column="66" />
+          <folding>
+            <element signature="e#0#25#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/components/memeItem/MemeItem.less">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="781">
+          <caret line="69" column="3" selection-start-line="69" selection-start-column="3" selection-end-line="69" selection-end-column="3" />
         </state>
       </provider>
     </entry>
@@ -2692,32 +2632,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/components/Navbar/Navbar.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="731">
+        <state relative-caret-position="782">
           <caret line="46" column="5" selection-start-line="46" selection-start-column="5" selection-end-line="46" selection-end-column="5" />
-          <folding>
-            <element signature="e#0#26#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/actions/auth.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="51">
-          <caret line="19" column="35" lean-forward="true" selection-start-line="19" selection-start-column="21" selection-end-line="19" selection-end-column="35" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/reducers/post.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="425">
-          <caret line="25" column="30" selection-start-line="25" selection-start-column="30" selection-end-line="25" selection-end-column="30" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/routes/RegisterPage.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1444">
-          <caret line="86" column="14" selection-start-line="86" selection-start-column="14" selection-end-line="86" selection-end-column="14" />
           <folding>
             <element signature="e#0#26#0" expanded="true" />
           </folding>
@@ -2734,37 +2650,130 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/reducers/rootReducer.js">
+    <entry file="file://$PROJECT_DIR$/src/routes/HomePage.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="289">
-          <caret line="17" column="14" selection-start-line="17" selection-start-column="4" selection-end-line="17" selection-end-column="14" />
+        <state relative-caret-position="731">
+          <caret line="43" column="18" lean-forward="true" selection-start-line="43" selection-start-column="18" selection-end-line="43" selection-end-column="18" />
           <folding>
-            <element signature="e#0#38#0" expanded="true" />
+            <element signature="e#0#26#0" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/actions/fetchComments.js">
+    <entry file="file://$PROJECT_DIR$/src/routes/LoginPage.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="493">
-          <caret line="29" column="26" selection-start-line="29" selection-start-column="17" selection-end-line="29" selection-end-column="26" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/App.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-69">
-          <caret line="38" column="66" lean-forward="true" selection-start-line="38" selection-start-column="58" selection-end-line="38" selection-end-column="66" />
+        <state relative-caret-position="748">
+          <caret line="53" column="1" lean-forward="true" selection-start-line="53" selection-start-column="1" selection-end-line="53" selection-end-column="1" />
           <folding>
-            <element signature="e#0#25#0" expanded="true" />
+            <element signature="e#0#26#0" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/reducers/addComment.js">
+    <entry file="file://$PROJECT_DIR$/src/routes/RandomPage.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="68">
-          <caret line="4" column="11" selection-start-line="4" selection-start-column="4" selection-end-line="4" selection-end-column="11" />
+        <state relative-caret-position="362">
+          <caret line="27" lean-forward="true" selection-start-line="27" selection-end-line="27" />
+          <folding>
+            <element signature="e#0#26#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/routes/RegisterPage.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="821">
+          <caret line="86" column="14" selection-start-line="86" selection-start-column="14" selection-end-line="86" selection-end-column="14" />
+          <folding>
+            <element signature="e#0#26#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/routes/UserPage.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="34">
+          <caret line="2" column="40" selection-start-line="2" selection-start-column="40" selection-end-line="2" selection-end-column="40" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/actions/auth.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="323">
+          <caret line="19" column="35" selection-start-line="19" selection-start-column="21" selection-end-line="19" selection-end-column="35" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/middleware/api.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state>
+          <caret column="19" selection-start-column="19" selection-end-column="19" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/reducers/fetch/fetchQueuePage.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="459">
+          <caret line="27" column="30" selection-start-line="27" selection-start-column="30" selection-end-line="27" selection-end-column="30" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/reducers/fetch/fetchRandomPost.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="714">
+          <caret line="42" column="1" selection-start-line="42" selection-start-column="1" selection-end-line="42" selection-end-column="1" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/reducers/fetch/fetchPost.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="425">
+          <caret line="25" column="30" selection-start-line="25" selection-start-column="30" selection-end-line="25" selection-end-column="30" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/reducers/fetch/fetchComments.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="663">
+          <caret line="39" column="1" lean-forward="true" selection-start-line="39" selection-start-column="1" selection-end-line="39" selection-end-column="1" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/actions/fetch/fetchRandomPost.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="527">
+          <caret line="31" column="1" selection-start-line="31" selection-start-column="1" selection-end-line="31" selection-end-column="1" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/actions/fetch/fetchPost.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="527">
+          <caret line="31" column="1" lean-forward="true" selection-start-line="31" selection-start-column="1" selection-end-line="31" selection-end-column="1" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/actions/fetch/fetchMainPage.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="527">
+          <caret line="31" column="1" selection-start-line="31" selection-start-column="1" selection-end-line="31" selection-end-column="1" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/components/comment/Comment.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="595">
+          <caret line="35" column="20" selection-start-line="35" selection-start-column="20" selection-end-line="35" selection-end-column="20" />
+          <folding>
+            <element signature="e#0#26#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/actions/fetch/fetchComments.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="527">
+          <caret line="31" column="1" selection-start-line="31" selection-start-column="1" selection-end-line="31" selection-end-column="1" />
         </state>
       </provider>
     </entry>
@@ -2775,27 +2784,78 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/actions/addComment.js">
+    <entry file="file://$PROJECT_DIR$/src/reducers/add/addComment.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="340">
-          <caret line="20" column="25" selection-start-line="20" selection-start-column="16" selection-end-line="20" selection-end-column="25" />
+        <state relative-caret-position="425">
+          <caret line="25" column="1" lean-forward="true" selection-start-line="25" selection-start-column="1" selection-end-line="25" selection-end-column="1" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/reducers/add/addFeedback.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="425">
+          <caret line="25" column="1" selection-start-line="25" selection-start-column="1" selection-end-line="25" selection-end-column="1" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/routes/MemePage.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="543">
-          <caret line="101" selection-start-line="101" selection-end-line="101" />
+        <state relative-caret-position="226">
+          <caret line="30" column="5" lean-forward="true" selection-start-line="26" selection-start-column="2" selection-end-line="30" selection-end-column="5" />
           <folding>
             <element signature="e#0#26#0" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/middleware/api.js">
+    <entry file="file://$PROJECT_DIR$/src/reducers/rootReducer.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state>
-          <caret column="37" selection-start-column="37" selection-end-column="39" />
+        <state relative-caret-position="323">
+          <caret line="19" column="15" selection-start-line="19" selection-start-column="4" selection-end-line="19" selection-end-column="15" />
+          <folding>
+            <element signature="e#0#38#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/actions/add/addComment.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="214">
+          <caret line="14" column="33" selection-start-line="14" selection-start-column="33" selection-end-line="14" selection-end-column="33" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/routes/QueuePage.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="146">
+          <caret line="34" column="9" lean-forward="true" selection-start-line="34" selection-start-column="9" selection-end-line="34" selection-end-column="9" />
+          <folding>
+            <element signature="e#0#26#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/actions/fetch/fetchQueuePage.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="527">
+          <caret line="31" column="1" lean-forward="true" selection-start-line="31" selection-start-column="1" selection-end-line="31" selection-end-column="1" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/components/memeItem/MemeItem.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="690">
+          <caret line="75" column="13" lean-forward="true" selection-start-line="75" selection-start-column="13" selection-end-line="75" selection-end-column="13" />
+          <folding>
+            <element signature="e#0#26#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/actions/add/addFeedback.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="119">
+          <caret line="7" column="27" selection-start-line="7" selection-start-column="27" selection-end-line="7" selection-end-column="27" />
         </state>
       </provider>
     </entry>

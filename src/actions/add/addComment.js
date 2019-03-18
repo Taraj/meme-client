@@ -1,4 +1,4 @@
-import {CALL_API} from '../middleware/api';
+import {CALL_API} from '../../middleware/api';
 
 export const ADD_COMMENTS_SUCCESS = 'ADD_COMMENTS_SUCCESS';
 export const ADD_COMMENTS_FAILURE = 'ADD_COMMENTS_FAILURE';

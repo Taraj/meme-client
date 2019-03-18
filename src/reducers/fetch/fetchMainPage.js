@@ -1,36 +1,41 @@
-import {FETCH_COMMENTS_REQUEST, FETCH_COMMENTS_FAILURE, FETCH_COMMENTS_SUCCESS} from '../actions/fetchComments';
+import {FETCH_MAIN_PAGE_REQUEST, FETCH_MAIN_PAGE_FAILURE, FETCH_MAIN_PAGE_SUCCESS} from '../../actions/fetch/fetchMainPage';
 
-export function comments(state = {
-    comments: null,
+export function fetchMainPage(state = {
+    posts: null,
     error: null,
     isLoaded: false
 }, action) {
     switch (action.type) {
-        case FETCH_COMMENTS_SUCCESS:
+        case FETCH_MAIN_PAGE_SUCCESS:
             return Object.assign({}, state, {
-                comments: action.response.map(item => {
+                posts: action.response.map(item => {
                     return {
                         id: item.id,
-                        content: item.content,
                         author: {
                             nickname: item.author.nickname,
-                            avatarUrl: item.author.avatar
                         },
+                        memeUrl: item.url,
+                        title: item.title,
                         createAt: new Date(item.createdAt).toLocaleDateString('pl-PL'),
+                        tags: item.tags.map(tag => {
+                            return tag.name
+                        }),
+                        likes: item.likes,
+                        dislikes: item.dislikes
                     }
                 }),
                 error: null,
                 isLoaded: true
             });
-        case FETCH_COMMENTS_FAILURE:
+        case FETCH_MAIN_PAGE_FAILURE:
             return Object.assign({}, state, {
-                comments: null,
+                posts: null,
                 error: action.error,
                 isLoaded: true
             });
-        case FETCH_COMMENTS_REQUEST:
+        case FETCH_MAIN_PAGE_REQUEST:
             return Object.assign({}, state, {
-                comments: null,
+                posts: null,
                 error: null,
                 isLoaded: false
             });

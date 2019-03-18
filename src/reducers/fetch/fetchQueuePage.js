@@ -1,12 +1,12 @@
-import {FETCH_MAIN_PAGE_REQUEST, FETCH_MAIN_PAGE_FAILURE, FETCH_MAIN_PAGE_SUCCESS} from '../actions/fetchMainPage';
+import {FETCH_QUEUE_PAGE_REQUEST, FETCH_QUEUE_PAGE_FAILURE, FETCH_QUEUE_PAGE_SUCCESS} from '../../actions/fetch/fetchQueuePage';
 
-export function mainPage(state = {
+export function fetchQueuePage(state = {
     posts: null,
     error: null,
     isLoaded: false
 }, action) {
     switch (action.type) {
-        case FETCH_MAIN_PAGE_SUCCESS:
+        case FETCH_QUEUE_PAGE_SUCCESS:
             return Object.assign({}, state, {
                 posts: action.response.map(item => {
                     return {
@@ -27,18 +27,19 @@ export function mainPage(state = {
                 error: null,
                 isLoaded: true
             });
-        case FETCH_MAIN_PAGE_FAILURE:
+        case FETCH_QUEUE_PAGE_FAILURE:
             return Object.assign({}, state, {
                 posts: null,
                 error: action.error,
                 isLoaded: true
             });
-        case FETCH_MAIN_PAGE_REQUEST:
+        case FETCH_QUEUE_PAGE_REQUEST:
             return Object.assign({}, state, {
                 posts: null,
                 error: null,
                 isLoaded: false
             });
+
         default:
             return state
     }

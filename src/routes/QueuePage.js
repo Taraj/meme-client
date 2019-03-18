@@ -1,7 +1,7 @@
 import React from 'react';
 import {connect} from "react-redux";
 import {Link} from 'react-router-dom'
-import {fetchQueuePage} from "../actions/fetchQueuePage";
+import {fetchQueuePage} from "../actions/fetch/fetchQueuePage";
 
 import MemeItem from '../components/memeItem/MemeItem'
 
@@ -19,6 +19,10 @@ class QueuePage extends React.Component {
 
     componentDidUpdate(prevProps, prevState, snapshot) {
         if (prevProps.match.params.id !== this.props.match.params.id) {
+            this.props.fetchQueuePage(this.pageId());
+        }
+
+        if(prevProps.isAdded !== this.props.isAdded){
             this.props.fetchQueuePage(this.pageId());
         }
     }
@@ -52,6 +56,8 @@ export default connect(state => {
         posts: state.queuePage.posts,
         error: state.queuePage.error,
         isLoaded: state.queuePage.isLoaded,
+
+        isAdded: state.addFeedback.isAdded
     };
 }, dispatch => {
     return {

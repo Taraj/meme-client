@@ -1,12 +1,12 @@
-import {FETCH_POST_REQUEST, FETCH_POST_FAILURE, FETCH_POST_SUCCESS} from '../actions/fetchPost';
+import {FETCH_RANDOM_POST_REQUEST, FETCH_RANDOM_POST_FAILURE, FETCH_RANDOM_POST_SUCCESS} from '../../actions/fetch/fetchRandomPost';
 
-export function post(state = {
+export function fetchRandomPost(state = {
     post: null,
     error: null,
     isLoaded: false
 }, action) {
     switch (action.type) {
-        case FETCH_POST_SUCCESS:
+        case FETCH_RANDOM_POST_SUCCESS:
             return Object.assign({}, state, {
                 post: {
                     id: action.response.id,
@@ -25,13 +25,13 @@ export function post(state = {
                 error: null,
                 isLoaded: true
             });
-        case FETCH_POST_FAILURE:
+        case FETCH_RANDOM_POST_FAILURE:
             return Object.assign({}, state, {
                 post: null,
                 error: action.error,
                 isLoaded: true
             });
-        case FETCH_POST_REQUEST:
+        case FETCH_RANDOM_POST_REQUEST:
             return Object.assign({}, state, {
                 post: null,
                 error: null,

@@ -1,21 +1,23 @@
 import {combineReducers} from 'redux';
 
-import {randomPost} from './randomPost';
-import {queuePage} from './queuePage';
-import {mainPage} from './mainPage';
-import {comments} from './comments';
-import {post} from './post';
+import {fetchRandomPost} from './fetch/fetchRandomPost';
+import {fetchQueuePage} from './fetch/fetchQueuePage';
+import {fetchMainPage} from './fetch/fetchMainPage';
+import {fetchComments} from './fetch/fetchComments';
+import {fetchPost} from './fetch/fetchPost';
 import {auth} from './auth'
-import {addComment} from './addComment';
+import {addComment} from './add/addComment';
+import {addFeedback} from './add/addFeedback';
 
 const rootReducer = combineReducers({
-    randomPost: randomPost,
-    mainPage: mainPage,
-    queuePage: queuePage,
-    comments: comments,
-    post: post,
+    randomPost: fetchRandomPost,
+    mainPage: fetchMainPage,
+    queuePage: fetchQueuePage,
+    comments: fetchComments,
+    post: fetchPost,
     auth: auth,
-    addComment: addComment
+    addComment: addComment,
+    addFeedback: addFeedback
 });
 
 export default rootReducer

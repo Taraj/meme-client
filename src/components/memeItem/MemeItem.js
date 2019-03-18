@@ -2,7 +2,10 @@ import React from 'react';
 import {Link} from "react-router-dom";
 
 import './MemeItem.less';
+import {connect} from "react-redux";
+import {addFeedback} from "../../actions/add/addFeedback";
 
+import {fetchQueuePage} from "../../actions/fetch/fetchQueuePage";
 
 class MemeItem extends React.Component {
 
@@ -16,18 +19,13 @@ class MemeItem extends React.Component {
 
 
     like = () => {
-        this.setState({
-            likes: this.state.likes + 1,
-            dislikes: this.state.dislikes
-        })
+        addFeedback(this.props.meme.id,true);
     };
 
     dislike = () => {
-        this.setState({
-            likes: this.state.likes,
-            dislikes: this.state.dislikes + 1
-        })
+        addFeedback(this.props.meme.id,false);
     };
+
 
     render() {
         return (
@@ -65,4 +63,14 @@ class MemeItem extends React.Component {
     }
 }
 
-export default MemeItem;
+
+export default connect(state => {
+    return {
+        addFeedback: state.addFeedback.error,
+        isAdded: state.addFeedback.isAdded
+    };
+}, dispatch => {
+    return {
+        addFeedback: (id, isLike) => dispatch(fetchQueuePage(id))
+    };
+})(MemeItem);

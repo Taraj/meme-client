@@ -1,7 +1,7 @@
 import React from 'react';
 import {connect} from "react-redux";
 import {Link} from 'react-router-dom'
-import {fetchMainPage} from "../actions/fetchMainPage";
+import {fetchMainPage} from "../actions/fetch/fetchMainPage";
 
 import MemeItem from '../components/memeItem/MemeItem'
 
