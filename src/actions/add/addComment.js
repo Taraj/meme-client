@@ -29,8 +29,8 @@ function doRequest(id, content) {
                     'Content-Type': 'application/json',
                 })
 
-            }
-            ,authenticated:true
+            },
+            authenticated:true
         }
     }
 }

@@ -31,9 +31,14 @@ export class Navbar extends React.Component {
                     <Link className={"menu-main-link"} to="/queue">Poczekalnia</Link>
                     <Link className={"menu-main-link"} to="/random">Losowe</Link>
                     {this.props.isAuthenticated ? (
-                        <Link className={"menu-main-link"} to={"/account"}>Konto</Link>
+                        <Link className={"menu-main-link"} to={"/add"}>Dodaj</Link>
                     ) : (
                         <Link className={"menu-main-link"} to={"/login"}>Zaloguj</Link>
+                    )}
+                    {this.props.isAuthenticated ? (
+                        <Link className={"menu-main-link"} to={"/account"}>Konto</Link>
+                    ) : (
+                        null
                     )}
                     {this.props.isAuthenticated ? (
                         <Link className={"menu-main-link"} to={"/logout"}>Wyloguj</Link>

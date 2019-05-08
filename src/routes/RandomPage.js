@@ -1,6 +1,6 @@
 import React from 'react';
 
-import MemeItem from '../components/memeItem/MemeItem';
+import {MemeItem} from '../components/memeItem/MemeItem';
 import {connect} from "react-redux";
 import {fetchRandomPost} from '../actions/fetch/fetchRandomPost';
 
@@ -42,6 +42,7 @@ export default connect(state => {
         post: state.randomPost.post,
         error: state.randomPost.error,
         isLoaded: state.randomPost.isLoaded,
+
     };
 }, dispatch => {
     return {

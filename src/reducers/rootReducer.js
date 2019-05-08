@@ -8,6 +8,9 @@ import {fetchPost} from './fetch/fetchPost';
 import {auth} from './auth'
 import {addComment} from './add/addComment';
 import {addFeedback} from './add/addFeedback';
+import {fetchTagPage} from "./fetch/fetchTagPage";
+import {fetchUserPage} from "./fetch/fetchUserPage";
+import {addPost} from "./add/addPost";
 
 const rootReducer = combineReducers({
     randomPost: fetchRandomPost,
@@ -17,7 +20,9 @@ const rootReducer = combineReducers({
     post: fetchPost,
     auth: auth,
     addComment: addComment,
-    addFeedback: addFeedback
+    fetchTagPage: fetchTagPage,
+    userPage:fetchUserPage,
+    addPost:addPost
 });
 
 export default rootReducer

@@ -1,25 +1,21 @@
-import{ADD_FEEDBACK_FAILURE, ADD_FEEDBACK_REQUEST, ADD_FEEDBACK_SUCCESS} from "../../actions/add/addFeedback";
+import {ADD_POST_FAILURE,ADD_POST_REQUEST,ADD_POST_SUCCESS} from "../../actions/add/addPost";
 
-export function addFeedback(state = {
+export function addPost(state = {
     error: null,
     isAdded: false
 }, action) {
     switch (action.type) {
-
-        case ADD_FEEDBACK_SUCCESS:
-
+        case ADD_POST_SUCCESS:
             return Object.assign({}, state, {
                 error: null,
                 isAdded: true
             });
-        case ADD_FEEDBACK_FAILURE:
-            console.log( action.error);
+        case ADD_POST_FAILURE:
             return Object.assign({}, state, {
                 error: action.error,
                 isAdded: true
             });
-        case ADD_FEEDBACK_REQUEST:
-
+        case ADD_POST_REQUEST:
             return Object.assign({}, state, {
                 error: null,
                 isAdded: false

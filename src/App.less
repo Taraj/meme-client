@@ -61,6 +61,7 @@ button {
 .user-main {
     background-color: #1f1f1f;
     display: flex;
+    margin-bottom: 10px;
 }
 
 .user-main-avatar {
@@ -88,7 +89,7 @@ button {
 .main-auth-container {
     border: 0.5px solid #444444;
     border-radius: 10px;
- text-align: center;
+    text-align: center;
 
 }
 
@@ -121,19 +122,50 @@ button {
     font-size: 30px;
     transition: box-shadow 0.1s ease-in;
     will-change: box-shadow;
-    &:hover{
+
+    &:hover {
         box-shadow: 0 0 10px #202020;
     }
 }
-.main-auth-link{
+
+.main-auth-link {
     text-decoration: underline;
     color: #4285f4;
     @media only screen and (max-width: 400px) {
-      display: block;
+        display: block;
     }
 }
-.main-auth-error{
+
+.main-auth-error {
     color: #aa0000;
     margin-top: 30px;
     margin-bottom: -20px;
+}
+
+.main-acc-container {
+    border: 0.5px solid #444444;
+    border-radius: 10px;
+    text-align: center;
+    padding-bottom: 50px;
+    margin: 50px 0 50px 0;
+}
+
+.user-actions {
+    display: flex;
+}
+
+.user-button {
+    padding: 5px;
+    margin: 5px;
+    font-size: 20px;
+    flex: 1 2;
+    cursor: pointer;
+}
+
+.user-like {
+background-color: green;
+}
+
+.user-dislike {
+    background-color: #aa0000;
 }

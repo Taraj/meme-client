@@ -39,11 +39,12 @@
   display: inline-block;
 }
 
-.meme-main-feedback {
+.meme-main-buttons {
+margin-bottom: 5px;
 }
 
-.meme-main-feedback-like {
-  background-color: green;
+.meme-main-button{
+
   padding: 10px 0;
   width: 50%;
   font-size: 30px;
@@ -54,18 +55,21 @@
     font-size: 20px;
     width: 100%;
   }
+}
+
+
+.meme-main-feedback-like {
+  background-color: green;
 }
 
 .meme-main-feedback-dislike {
   background-color: #aa0000;
-  padding: 10px 0;
-  width: 50%;
-  font-size: 30px;
-  border: none;
-  cursor: pointer;
+}
 
-  @media only screen and (max-width: 350px) {
-    font-size: 20px;
-    width: 100%;
-  }
+.meme-main-add{
+  background-color: orange;
+}
+
+.meme-main-delete{
+  background-color: orangered;
 }

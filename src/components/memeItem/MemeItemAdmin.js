@@ -3,9 +3,9 @@ import {Link} from "react-router-dom";
 
 import './MemeItem.less';
 import {AddFeedbackToPost} from "../../api/AddFeedbackToPost";
+import {callApi} from "../../middleware/api";
 
-
-export class MemeItem extends React.Component {
+export class MemeItemAdmin extends React.Component {
 
     constructor(props) {
         super(props);
@@ -16,6 +16,7 @@ export class MemeItem extends React.Component {
     }
 
     like = () => {
+
         AddFeedbackToPost(this.props.meme.id, true)
             .then(() => {
                 this.setState({
@@ -38,7 +39,24 @@ export class MemeItem extends React.Component {
                 console.log(err);
             })
     };
+    add = () => {
+        callApi('/posts/' + this.props.meme.id, true, {
+            method: 'PUT',
+            headers: new Headers()
+        }).then(()=>{
+            this.props.refresh();
+        })
 
+    };
+
+    delete = () => {
+        callApi('/posts/' + this.props.meme.id, true, {
+            method: 'DELETE',
+            headers: new Headers()
+        }).then(()=>{
+            this.props.refresh();
+        })
+    };
 
     render() {
 
@@ -82,6 +100,14 @@ export class MemeItem extends React.Component {
                         </button>
                         <button onClick={this.dislike} className="meme-main-button meme-main-feedback-dislike">
                             {-1 * this.state.dislikes}
+                        </button>
+                    </div>
+                    <div className="meme-main-buttons">
+                        <button onClick={this.add} className="meme-main-button meme-main-add">
+                            Dodaj
+                        </button>
+                        <button onClick={this.delete} className="meme-main-button meme-main-delete">
+                            Usuń
                         </button>
                     </div>
                 </div>

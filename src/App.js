@@ -7,16 +7,17 @@ import {connect} from "react-redux";
 import {Navbar} from './components/Navbar/Navbar';
 
 
-import HomePage from './routes/HomePage';
-import QueuePage from './routes/QueuePage';
-import UserPage from './routes/UserPage';
+import HomePage from './routes/main/HomePage';
+import QueuePage from './routes/main/QueuePage';
+import UserPage from './routes/main/UserPage';
 import LoginPage from "./routes/LoginPage";
 import RegisterPage from "./routes/RegisterPage";
 import MemePage from './routes/MemePage';
 import RandomPage from './routes/RandomPage';
 import AccountPage from './routes/AccountPage';
-
+import TagPage from './routes/main/TagPage';
 import {logout} from "./actions/auth";
+import CreateMemePage from './routes/CreateMemePage';
 
 class App extends React.Component {
 
@@ -31,8 +32,9 @@ class App extends React.Component {
                             <Route exact path={["/", "/home/:id", "/home/", "/home"]} component={HomePage}/>
                             <Route path={["/queue/:id", "/queue/", "/queue"]} component={QueuePage}/>
                             <Route path="/meme/:id" component={MemePage}/>
+                            <Route path="/tags/:name/:id" component={TagPage}/>
                             <Route path="/random" component={RandomPage}/>
-                            <Route path={"/user/:id"} component={UserPage}/>
+                            <Route path={"/user/:nickname/:id"} component={UserPage}/>
                             <Route path={"/login"}
                                    render={() => (
                                        isAuthenticated ? (
@@ -44,7 +46,7 @@ class App extends React.Component {
                             />
                             <Route path={"/register"} render={() => (
                                 isAuthenticated ? (
-                                    <Redirect to={"/account"}/>
+                                    <Redirect to={"/"}/>
                                 ) : (
                                     <RegisterPage/>
                                 )
@@ -60,6 +62,15 @@ class App extends React.Component {
                                            <Redirect to={"/login"}/>
                                        ) : (
                                            <AccountPage/>
+                                       )
+                                   )}
+                            />
+                            <Route path={"/add"}
+                                   render={() => (
+                                       !isAuthenticated ? (
+                                           <Redirect to={"/login"}/>
+                                       ) : (
+                                           <CreateMemePage/>
                                        )
                                    )}
                             />

@@ -1,9 +1,9 @@
-const BASE_URL = 'http://localhost:8080/api/v1';
+const BASE_URL = 'https://taraj.tk/api/v1';
 
 
 export const CALL_API = Symbol('Call API');
 
-function callApi(endpoint, authenticated, config = {
+export function callApi(endpoint, authenticated, config = {
     headers: new Headers()
 }) {
 

@@ -13,7 +13,6 @@ function prepareRequest() {
 
 
 function doRequest(id, isPositive) {
-
     return {
         [CALL_API]: {
             endpoint: '/posts/' + id + '/feedback',

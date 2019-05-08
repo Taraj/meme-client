@@ -1,9 +1,8 @@
 import React from 'react';
 import {connect} from "react-redux";
-import {Link} from 'react-router-dom'
-import {fetchQueuePage} from "../actions/fetch/fetchQueuePage";
+import {fetchQueuePage} from "../../actions/fetch/fetchQueuePage";
 
-import MemeItem from '../components/memeItem/MemeItem'
+import MemePagination from "../../components/postPage/MemePagination";
 
 
 class QueuePage extends React.Component {
@@ -13,16 +12,17 @@ class QueuePage extends React.Component {
         return (id ? id : 1);
     };
 
+    refresh = ()=>{
+        this.props.fetchQueuePage(this.pageId());
+    };
+
+
     componentDidMount() {
         this.props.fetchQueuePage(this.pageId());
     }
 
     componentDidUpdate(prevProps, prevState, snapshot) {
         if (prevProps.match.params.id !== this.props.match.params.id) {
-            this.props.fetchQueuePage(this.pageId());
-        }
-
-        if(prevProps.isAdded !== this.props.isAdded){
             this.props.fetchQueuePage(this.pageId());
         }
     }
@@ -40,12 +40,7 @@ class QueuePage extends React.Component {
 
         return (
             <div>
-                {posts.map(item =>
-                    <MemeItem key={item.id} meme={item}/>
-                )}
-                <Link to={"/queue/" + (parseInt(this.pageId()) + 1)} className="main-container-long-button">
-                    Następna Strona
-                </Link>
+                <MemePagination  refresh={this.refresh} posts={posts} nextPageUrl={"/queue/" + (parseInt(this.pageId()) + 1)}/>
             </div>
         );
     }
@@ -56,11 +51,9 @@ export default connect(state => {
         posts: state.queuePage.posts,
         error: state.queuePage.error,
         isLoaded: state.queuePage.isLoaded,
-
-        isAdded: state.addFeedback.isAdded
     };
 }, dispatch => {
     return {
-        fetchQueuePage: (page) => dispatch(fetchQueuePage(page))
+        fetchQueuePage: (page) => dispatch(fetchQueuePage(page)),
     };
 })(QueuePage);

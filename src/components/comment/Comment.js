@@ -5,7 +5,9 @@ import {Link} from "react-router-dom";
 
 class Comment extends React.Component {
 
+
     render() {
+
         return (
             <div className="comment-item-container">
                 <div className="comment-item-author-image">
@@ -19,7 +21,7 @@ class Comment extends React.Component {
 
                 <div className="comment-item-main">
                     <div className="comment-item-main-info">
-                        <Link to={"/user/" + this.props.comment.author.nickname}
+                        <Link to={"/user/" + this.props.comment.author.nickname+"/1"}
                               className="comment-item-main-info-author">{this.props.comment.author.nickname}</Link>
                         <span className="menu-main-main-info-date">{this.props.comment.createAt}</span>
                     </div>

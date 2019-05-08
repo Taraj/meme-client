@@ -2,12 +2,14 @@ import React from 'react';
 import {connect} from "react-redux";
 
 
-import MemeItem from '../components/memeItem/MemeItem';
+import {MemeItem} from '../components/memeItem/MemeItem';
 import Comment from '../components/comment/Comment'
 
 import {fetchComments} from "../actions/fetch/fetchComments";
 import {fetchPost} from "../actions/fetch/fetchPost";
 import {addComment} from "../actions/add/addComment";
+
+
 
 class MemePage extends React.Component {
 
@@ -100,7 +102,9 @@ export default connect(state => {
 
         isAuthenticated: state.auth.isAuthenticated,
 
-        isAdded: state.addComment.isAdded
+        isAdded: state.addComment.isAdded,
+
+        isAdmin: state.auth.data.admin
     };
 }, dispatch => {
     return {

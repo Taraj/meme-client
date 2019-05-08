@@ -1,15 +1,19 @@
 import React from 'react';
 import {connect} from "react-redux";
-import {Link} from 'react-router-dom'
-import {fetchMainPage} from "../actions/fetch/fetchMainPage";
+import {fetchMainPage} from "../../actions/fetch/fetchMainPage";
 
-import MemeItem from '../components/memeItem/MemeItem'
+import MemePagination from "../../components/postPage/MemePagination";
+
 
 class HomePage extends React.Component {
 
     pageId = () => {
         const {id} = this.props.match.params;
         return (id ? id : 1);
+    };
+
+    refresh = ()=>{
+        this.props.fetchMainPage(this.pageId());
     };
 
     componentDidMount() {
@@ -35,12 +39,7 @@ class HomePage extends React.Component {
 
         return (
             <div>
-                {posts.map(item =>
-                    <MemeItem key={item.id} meme={item}/>
-                )}
-                <Link to={"/home/" + (parseInt(this.pageId()) + 1)} className="main-container-long-button">
-                    Następna Strona
-                </Link>
+                <MemePagination refresh={this.refresh} posts={posts} nextPageUrl={"/home/" + (parseInt(this.pageId()) + 1)}/>
             </div>
         );
     }

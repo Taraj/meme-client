@@ -15,7 +15,10 @@ function initState() {
     }
     return {
         isAuthenticated: false,
-        data: null,
+        data: {
+            nickname: null,
+            admin: null
+        },
         error: null
     }
 }
@@ -41,21 +44,30 @@ export function auth(state = initState(), action) {
             localStorage.removeItem('auth');
             return Object.assign({}, state, {
                 isAuthenticated: false,
-                data: null,
+                data: {
+                    nickname: null,
+                    admin: null
+                },
                 error: action.error
             });
         case AUTH_REQUEST:
             localStorage.removeItem('auth');
             return Object.assign({}, state, {
                 isAuthenticated: false,
-                data: null,
+                data: {
+                    nickname: null,
+                    admin: null
+                },
                 error: null
             });
         case LOGOUT_REQUEST:
             localStorage.removeItem('auth');
             return Object.assign({}, state, {
                 isAuthenticated: false,
-                data: null,
+                data: {
+                    nickname: null,
+                    admin: null
+                },
                 error: null
             });
         default:
