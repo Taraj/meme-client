@@ -47,7 +47,7 @@ class LoginPage extends React.Component {
                     <input type="submit" className={"main-auth-submit"} value={"Zaloguj"}/>
                 </form>
                 <p>Nie masz jeszcze konta? <Link className={"main-auth-link"} to={"/register"}>Zarejestruj!!!</Link></p>
-
+                <p>Nie pamietasz hasła? <Link className={"main-auth-link"} to={"/reset"}>Resetuj!!!</Link></p>
             </div>
         );
     }

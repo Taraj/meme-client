@@ -18,7 +18,8 @@ import AccountPage from './routes/AccountPage';
 import TagPage from './routes/main/TagPage';
 import {logout} from "./actions/auth";
 import CreateMemePage from './routes/CreateMemePage';
-
+import ResetPage from './routes/ResetPage';
+import ConfirmResetPage from './routes/ConfirmResetPage'
 class App extends React.Component {
 
     render() {
@@ -74,6 +75,30 @@ class App extends React.Component {
                                        )
                                    )}
                             />
+
+                            <Route path={"/reset"}
+                                   render={() => (
+                                       isAuthenticated ? (
+                                           <Redirect to={"/account"}/>
+                                       ) : (
+                                           <ResetPage/>
+                                       )
+                                   )}
+                            />
+                            <Route path={"/reset-confirm"}
+                                   render={() => (
+                                       isAuthenticated ? (
+                                           <Redirect to={"/account"}/>
+                                       ) : (
+                                           <ConfirmResetPage/>
+                                       )
+                                   )}
+                            />
+
+
+
+
+
                         </Switch>
                     </main>
                 </div>
